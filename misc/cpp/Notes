@@ -1,0 +1,35 @@
+
+To run C++11 add -std=c++11
+	g++ -o name -std=c++11 name.cpp
+
+Parameters from console for main function
+	int main(int argc, char const *argv[])
+
+
+Header content
+	// This is start of the header guard.  ADD_H can be any unique name.  By convention, we use the name of the header file.
+	#ifndef NAME_H
+	#define NAME_H
+		// Content of the .h file, which is where the declarations go
+	// This is the end of the header guard
+	#endif
+
+Directives better not to use globally
+	using std::cout;		// this using declaration tells the compiler that cout should resolve to std::cout
+	using namespace std;		// this using directive tells the compiler that we're using everything in the std namespace!
+
+
+
+
+
+mingw - used to build windows exe's
+glade - gui builder
+
+
+
+
+
+
+Sources:
+	http://www.learncpp.com/
+	https://developer.gnome.org/gtkmm-tutorial/stable/index.html.en
