@@ -1,0 +1,48 @@
+//bgImage
+
+var bgReady = false;
+var bgImage = new Image();
+bgImage.onload = function() {
+	bgReady = true;
+};
+bgImage.src = "img/background.png";
+
+//player image
+var playerReady = false;
+var playerImage = new Image();
+playerImage.onload = function() {
+	playerReady = true;
+};
+playerImage.src = "img/025.png";
+
+// monster image
+var monsterReady = false;
+var monsterImage = new Image();
+monsterImage.onload = function() {
+	monsterReady = true;
+};
+monsterImage.src = "img/ball.gif";
+
+// bullet image
+var bulletReady = false;
+var bulletImage = new Image();
+bulletImage.onload = function() {
+	bulletReady = true;
+};
+bulletImage.src = "img/bullet.png";
+
+/*
+// draw everything
+var render = function() {
+	if (bgReady) {
+		ctx.drawImage(bgImage, 0, 0);
+	}
+
+	if (playerReady) {
+		canvas.drawImage(playerImage, player.x, player.y);
+	}
+
+	if (monsterReady) {
+		ctx.drawImage(monsterImage, monster.x, monster.y);
+	}
+*/

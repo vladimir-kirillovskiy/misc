@@ -1,0 +1,266 @@
+
+// To run C++11 add -std=c++11
+	g++ -o name -std=c++11 name.cpp
+
+// HEADER CONTENT
+	// This is start of the header guard.  ADD_H can be any unique name.  By convention, we use the name of the header file.
+	#ifndef NAME_H
+	#define NAME_H
+		// Content of the .h file, which is where the declarations go
+	// This is the end of the header guard
+	#endif
+
+// DIRECTIVES BETTER NOT TO USE GLOBALLY
+	using std::cout;		// this using declaration tells the compiler that cout should resolve to std::cout
+	using namespace std;	// this using directive tells the compiler that we're using everything in the std namespace!
+
+/* Based on gametutorials.com */ 
+
+// PREPROCESSOR DIRECTIVES
+
+	#include <iostream> 	// standard header files
+	#include "smthng.h"		// user defined header files
+
+	#define SHOW_ANSWERS 0		// C style definitions, not really used in C++
+
+	#define
+	#elif
+	#else
+	#endif
+	#error
+	#if
+	#ifdef
+	#ifndef
+	#import
+	#include
+	#line
+	#pragma
+	#undef
+
+// THE MATHEMATICAL ORDER OF PRECEDENCE
+
+	1)  Mathematical operations "default order of precedence" is left to right.
+	2)  Stuff in ()'s happens FIRST -- The innermost ()'s will get executed first
+	3)  Multiplication and Division occur before Addition and Subtraction
+	4)  Prefix operators will execute BEFORE any multiplication, division, 
+
+// STRINGS
+
+	#include <string> 	// required
+	string strAnswer = "";
+
+// LOOPS
+
+
+// FUNCTIONS 
+
+	// void - method;
+	// int, string, ... - function to return declared datatype;
+	void DrawMenu();  // to declare function, often in a header file
+	
+	// should be in every program
+	// could be with or without parameters
+	int main(int argc, char const *argv[])
+
+// RANDOM NUMBERS
+
+	#include <stdlib.h>     	// srand, rand
+	#include <windows.h> 	//	windows library to call the function GetTickCount()
+
+	// function to make GetTickCount() on linux
+		#include <sys/time.h>		// to make GetTickCount() for linux
+		using namespace std;
+
+		unsigned GetTickCount()
+		{
+		        struct timeval tv;
+		        if(gettimeofday(&tv, NULL) != 0)
+		                return 0;
+
+		        return (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
+		}
+
+	rand() 	// returns random number between 0 and RAND_MAX (This value is library-dependent, but is guaranteed to be at least 32767 on any standard library implementation)
+
+	srand(GetTickCount());	// srand() will seed our random number generator
+
+	v1 = rand() % 100;         // v1 in the range 0 to 99
+	v2 = rand() % 100 + 1;     // v2 in the range 1 to 100
+	v3 = rand() % 30 + 1985;   // v3 in the range 1985-2014
+
+	// another way to seed the random number generator
+		#include <iostream>
+		#include <time.h>
+		using namespace std;
+
+		int main()
+		{
+			srand(time(NULL));
+			int x = rand()%255;
+			cout << x;
+			return 0;
+		}
+
+// MACROS 
+
+	#define PI 3.141592653589;	// define constant
+	#define DEG2RAD(x) ((x) * PI / 180.0f); 	// define macros
+	/* write macros on 3 lines */
+	#define TRIPLE_SPACE() cout << endl \
+								<< endl \
+								<< endl;
+
+
+	// Macro Miscellaneous:
+
+	// For the most part, you should only create "one line" macros -- Macros ARE NOT functions,
+	// they are "textual substitutions".  So if you create very long elaborate macros that are called
+	// all over in the .cpp file(s) your executable is going to become HUGE!!!!!  Plus, macros
+	// are very difficult to debug.  This is another reason a macro should be very straightforward
+	// as to what it is doing so there is NO reason to debug it.
+
+// ARRAYS
+
+	char name[] = "Carlos"; // arrays don't have to be just chars -- they can be 
+							// int, double, user defined types, etc.
+	Every char array MUST end with a NULL character('0'). 
+
+
+	int numbers[] = {0,1,2,3,4,5,6,7,8,9};  // int, double, and all other data types are 
+											// different from char in that they DO NOT
+											// have a NULL terminating character -- Notice
+											// the slightly different declaration.
+
+// STRUCTURES
+
+	// As example, If we have a player structure, we would want to keep track of their:
+	// Health, Mana, Armor, Weapons, Inventory, Stats of any kind... etc..
+	struct PLAYER {
+	{
+			int Health;
+			int Mana;
+			ARMOR Armor
+			WEAPON Weapon;
+			INV Inv;
+			etc...;
+	};
+
+	// to use:
+	PLAYER player;
+	player.Health = 40;
+
+	void InitPlayer(PLAYER Player);
+
+	// typedef - don't get it ((
+
+	typedef struct _MONEY {					
+		int		Dollars;					
+		double	Cents;						
+	} MONEY;
+
+// READING FILES
+
+	// one way to do it
+
+	#include <fstream>					// Include this to use file streams
+
+	ifstream fin;						// create ifstream object
+	string strLine = "";								
+	string strWord = "";
+	fin.open("Stats.txt");				// open a  file
+
+	if(fin.fail())						// check if file was opened
+		return 1
+
+	while(fin >> strWord)				// get content word by word
+		cout << strWord << endl;
+
+	while (getline(fin, strLine))		// get content line by line
+		cout << strLine << endl;
+
+	fin >> strWord >> strName;		 	// read every second word				
+	fin >> strWord >> health;						
+	fin >> strWord >> gold;
+
+
+	fin.clear();						// clear error flags
+	fin.seekg(NULL, ios::beg);			// Set position in input sequence to the beggining
+
+	fin.close();						// close file
+
+	// another way to do it
+
+	#include <fstream>					// Include this to use file streams
+
+
+	// So what is this doing?  Well this is combining steps
+	// 1 and 2 from above.  First we are creating a variable
+	// of type "ifstream" (we named it "fileIn")  Then at the 
+	// same time (using a constructor which you'll get to when
+	// you get to classes :) we open the file we want our "ifstream"
+	// to read from.  The file is named "GT.txt" (it's a text file).
+	ifstream fileIn("GT.txt");
+	if(!fileIn)
+		return 1;
+
+
+	string strBuff;
+
+	while(!fileIn.eof())		// while not in the end of file
+	{
+		fileIn >> strBuff;
+		cout << strBuff << " ";
+	}
+
+	fileIn.close();
+
+// WRITING TO A FILE
+
+	#include <fstream>	
+
+	ofstream fout;
+	fout.open("Stats.txt");
+
+	fout << "Player: " << szName << endl;				// This prints "Player: Adol" to our file
+	fout << "Health: " << health << endl;				// This prints "Health: 100" to our file
+	fout << "Gold: "   << gold   << endl;				// This prints "Gold: 75" to our file
+
+	fout.close();
+
+
+// POINTERS
+
+	&num = 7;		// memory address of num
+	*pNum			// value of memory address
+
+// REFERENCES
+	
+	// can be similar to pointers but safer
+	void SwapWithReferences(int &num1, int &num2)
+	{
+
+		// **NOTE** Unlike when a variable is passed by pointer, there is no special
+		//			syntax required to use a reference inside the body of a function.
+		//			You simply use the variable in the same way as is it was not passed
+		//			by reference.
+		int temp = num1; 
+		num1 = num2;
+		num2 = temp;
+	}
+
+
+// DYNAMIC MEMORY
+
+	// Well lets make a char[] (read char array) big enough to hold all the letters
+	char *letters = new char[count];
+	while (!fileIn.eof())
+	{
+		fileIn >> letters[count];
+		count++;
+	}
+
+	// Make sure that "letters" ends with a NULL character
+	letters[count - 1] = NULL;
+	delete[] letters;		//free the memory
+	
+
