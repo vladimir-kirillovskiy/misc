@@ -49,6 +49,10 @@
 	#include <string> 	// required
 	string strAnswer = "";
 
+// FLOW CONTROL
+	
+	Switch - integers as cases 
+
 // LOOPS
 
 
