@@ -1,0 +1,70 @@
+Python with www.codecademy.com
+
+No semicolons at the end of the line
+True and False start with capital letter
+indentation for functions
+
+def spam():
+	eggs = 12
+	return eggs
+        
+print spam()
+
+# Single line comment
+""" 
+	multi line comment
+"""
+
+// MATH
+
+** - power of(^)
+
+// STRINGS
+
+str = "str";
+str[2] # "r"
+len(str)
+str.lower()
+str.upper()
+str() 	# cast to string
+
+# Methods that use dot notation only work with strings.
+
+# The % operator after a string is used to combine 
+# a string with variables. The % operator will replace 
+# a %s in the string with the string variable that comes after it.
+str = "%s, %s" % ("Hello", "World")
+
+raw_input("question") # get input from console
+
+// DATETIME
+
+from datetime import datetime 	# include datetime library
+
+now = datetime.now() 	# get current date 
+print now
+print now.year
+print now.month
+print now.day
+print now.hour
+print now.minute
+print now.second
+
+print '%s-%s-%s' % (now.year, now.month, now.day)	# print mm/dd/yyyy
+
+// BOOLEAN
+NOT is evaluated first;
+AND is evaluated next;
+OR 	is evaluated last.
+
+
+// FLOW CONTROL
+	
+def greater_less_equal_5(answer):
+    if answer > 5:
+        return 1
+    elif answer < 5:          
+        return -1
+    else:
+        return 0
+
