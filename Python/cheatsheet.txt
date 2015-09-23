@@ -1,0 +1,38 @@
+Python with www.codecademy.com
+
+No semicolons at the end of the line
+True and False start with capital letter
+indentation for functions
+
+def spam():
+	eggs = 12
+	return eggs
+        
+print spam()
+
+# Single line comment
+""" 
+	multi line comment
+"""
+
+// MATH
+
+** - power of(^)
+
+// STRINGS
+
+str = "str";
+str[2] # "r"
+len(str)
+str.lower()
+str.upper()
+str() 	# cast to string
+
+# Methods that use dot notation only work with strings.
+
+# The % operator after a string is used to combine 
+# a string with variables. The % operator will replace 
+# a %s in the string with the string variable that comes after it.
+str = "%s, %s" % ("Hello", "World")
+
+raw_input("question") # get input from console
