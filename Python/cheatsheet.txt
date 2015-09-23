@@ -36,3 +36,35 @@ str() 	# cast to string
 str = "%s, %s" % ("Hello", "World")
 
 raw_input("question") # get input from console
+
+// DATETIME
+
+from datetime import datetime 	# include datetime library
+
+now = datetime.now() 	# get current date 
+print now
+print now.year
+print now.month
+print now.day
+print now.hour
+print now.minute
+print now.second
+
+print '%s-%s-%s' % (now.year, now.month, now.day)	# print mm/dd/yyyy
+
+// BOOLEAN
+NOT is evaluated first;
+AND is evaluated next;
+OR 	is evaluated last.
+
+
+// FLOW CONTROL
+	
+def greater_less_equal_5(answer):
+    if answer > 5:
+        return 1
+    elif answer < 5:          
+        return -1
+    else:
+        return 0
+
