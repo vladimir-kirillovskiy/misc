@@ -1,4 +1,4 @@
-Python with www.codecademy.com
+Python2 with www.codecademy.com
 
 No semicolons at the end of the line
 True and False start with capital letter
@@ -23,10 +23,12 @@ print spam()
 
 str = "str";
 str[2] # "r"
+str[1:2]    # "tr"
 len(str)
 str.lower()
 str.upper()
 str() 	# cast to string
+str.isalpha()   # check is it is only letters. True/False
 
 # Methods that use dot notation only work with strings.
 
