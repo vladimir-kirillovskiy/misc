@@ -21,6 +21,10 @@ print spam()
 
 // STRINGS
 
+multi_line_str = ''' multi
+line
+string '''
+
 str = "str";
 str[2] # "r"
 str[1:2]    # "tr"
