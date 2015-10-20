@@ -1,0 +1,12 @@
+Math 
+
+List uses the prifix notation
+(+ 9 3) 		// = 11
+(- 9 3)			// = 6
+
+(expt 3 3)		// 3^3 = 27
+(mod 15 4)		// 15 % 4 = 3 
+
+Prefix notation and expressions also make order of operation clearer:
+(* (+ 10 2) (mod 3142 60))
+The innermost expressions are evaluated first, from left to right.
