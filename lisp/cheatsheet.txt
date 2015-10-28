@@ -1,12 +1,41 @@
-Math 
+Common Lisp
+https://www.youtube.com/watch?v=ymSq4wHrqyU
 
-List uses the prifix notation
-(+ 9 3) 		// = 11
-(- 9 3)			// = 6
+;;;; Lisp stands for List Processing, not
+;;;; Lots of Irritating Superflous Parentheses
+;;;; Lisps great strength is that you can use data to generate code
 
-(expt 3 3)		// 3^3 = 27
-(mod 15 4)		// 15 % 4 = 3 
+;;;; Describe program comment/At the top of source files
+;;; basic comment 
+;; 	indented along with code comment
+; inline comments 
 
-Prefix notation and expressions also make order of operation clearer:
-(* (+ 10 2) (mod 3142 60))
-The innermost expressions are evaluated first, from left to right.
+#||
+Multiline comment
+||#
+
+;;; output text on screen
+(format t "Hello world ~%") 	; "~%" == "\n"
+(print "What's your name?!")
+
+;;; Varaibles
+;;; NOT CASE SENSETIVE
+
+;;; define global variable
+;;; global variables usually surounded by *.
+(defvar *name* (read))  ; create variable name and store input from terminal
+
+;;; define function hello-you with *name* as parameter
+(defun hello-you (*name*)
+	;; print out greeting
+	(format t "Hello ~a! ~%" *name*)	; "~a" - placeholder
+)
+
+;;; Set default display mode
+;;; :upcase
+;;; :downcase
+(setq *print-case* :capitalize)
+
+;;; call function hello-you with *name* parameter
+(hello-you *name*)
+
