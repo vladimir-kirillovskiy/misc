@@ -1,0 +1,41 @@
+Common Lisp
+https://www.youtube.com/watch?v=ymSq4wHrqyU
+
+;;;; Lisp stands for List Processing, not
+;;;; Lots of Irritating Superflous Parentheses
+;;;; Lisps great strength is that you can use data to generate code
+
+;;;; Describe program comment/At the top of source files
+;;; basic comment 
+;; 	indented along with code comment
+; inline comments 
+
+#||
+Multiline comment
+||#
+
+;;; output text on screen
+(format t "Hello world ~%") 	; "~%" == "\n"
+(print "What's your name?!")
+
+;;; Varaibles
+;;; NOT CASE SENSETIVE
+
+;;; define global variable
+;;; global variables usually surounded by *.
+(defvar *name* (read))  ; create variable name and store input from terminal
+
+;;; define function hello-you with *name* as parameter
+(defun hello-you (*name*)
+	;; print out greeting
+	(format t "Hello ~a! ~%" *name*)	; "~a" - placeholder
+)
+
+;;; Set default display mode
+;;; :upcase
+;;; :downcase
+(setq *print-case* :capitalize)
+
+;;; call function hello-you with *name* parameter
+(hello-you *name*)
+
