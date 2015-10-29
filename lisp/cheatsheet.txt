@@ -28,6 +28,10 @@ Multiline comment
 ;;; define function hello-you with *name* as parameter
 (defun hello-you (*name*)
 	;; print out greeting
+	;; ~a : Shows the value
+	;; ~s : Shows quotes around the value
+	;; ~10a : Adds 10 spaces for the value with extra space to the right
+	;; ~10@a : Adds 10 spaces for the value with extra space to the left
 	(format t "Hello ~a! ~%" *name*)	; "~a" - placeholder
 )
 
@@ -39,3 +43,8 @@ Multiline comment
 ;;; call function hello-you with *name* parameter
 (hello-you *name*)
 
+;;; Forms
+
+(+ 5 4) ; = 9
+
+(+ 5 (- 6 2)) ; = 9

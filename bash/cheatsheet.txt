@@ -1,0 +1,4 @@
+Bash scripting
+
+; - command seporator
+# - comment
