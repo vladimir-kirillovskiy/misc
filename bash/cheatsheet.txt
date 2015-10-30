@@ -34,7 +34,7 @@ ls > /dev/null 					# ignore output
 
 # grep
 
-grep --color=auto				# enable highlighting for single command
+grep --color=auto						# enable highlighting for single command
 export GREP_OPTIONS='--color=auto' 		# enable highlighting permanently  
 
 grep -i break-in auth.log | awk {'print $12'} 						# -i case insensetive and awk {'print $12'} will print 12th column
@@ -44,3 +44,88 @@ man awk
 man seq
 
 ping -c 1 example.com | grep 'bytes from' | cut -d = -f 4			# cut -d = -f 4  will display 4th field after = 
+
+
+#!/bin/bash 		# start script 
+bash my.sh 			# run bash script
+chmod +x my.sh 		# make executable
+
+# Variables
+
+# Must start with letter and can be alphanumeric
+
+a=Hello
+b="good Morning" 
+c=16
+
+echo $a
+echo $b
+echo $c
+
+declare -i d=123 			#d is an integer	  
+declare -r e=456 			#e is read-only
+declare -l f="LOLCats"		#f is lolcats	  
+declare -l g="LOLCats"		#g is LOLCATS	 
+
+#build in variables
+
+echo $HOME 					# users home directory
+echo $PWD 					# current directory
+echo $MACHTYPE 				# machine type
+echo $HOSTNAME				# system name
+echo $BASH_VERSION			# version of bash
+echo $SECONDS				# Number of seconds Bash session has run
+echo $0 					# name of the script
+
+
+# Command substitution
+
+d=$(pwd)
+edho $d 	# run pwd command
+
+# Numbers
+
+d=2
+e=$((d+2))
+((e++))
+((e+=5))
+# without (()) - it would concatinate strings
+4+5  	# 45
+
+f=$((1/3)) 				# output integer
+g=$(echo 1/3 | bc -l) 	# will output decimals
+
+# Comparison
+
+# compare strings
+[[ expression ]]		# spaces are important!!! 
+
+[[ "cat" == "cat" ]]
+echo $?					# return 0 for success
+
+
+[[ 20 > 100 ]] 			# treated as strings
+
+# for strings and integers
+< 	-lt
+> 	-gt
+<= 	-le
+>= 	-ge
+== 	-eq
+!=	-ne 
+
+# Logical operators
+
+AND 	&&
+OR		||
+NOT 	!
+
+# String Null values
+
+IS Null 		-z
+IS NOT Null 	-n
+
+a=""
+b="cat"
+[[ -z $a && -n $b ]]
+echo $?
