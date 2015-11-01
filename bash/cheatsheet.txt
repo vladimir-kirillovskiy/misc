@@ -129,3 +129,29 @@ a=""
 b="cat"
 [[ -z $a && -n $b ]]
 echo $?
+
+
+# Strings
+
+a="hello"
+b="world"
+c=$a$b
+echo $c 		# helloworld
+echo ${#a}		# 5 - lenght of a	
+echo ${#c}		# 10 - lenght of c
+d=${c:3}
+echo d 			# loworld - print start with 3rd char (substring)
+echo ${c:3:4}	# lowo - print 4 chars after 3rd
+echo ${c:-4}	# print last 4 chars
+echo ${c:-4:3}	# similar but limit to 3 chars
+
+fruit="apple banana banana cherry"
+echo ${fruit/banana/durian}		# replace first instance of banana with durian 
+echo ${fruit//banana/durian}	# replace all instances of banana with durian 
+echo ${fruit/#apple/durian}		# will replace apple with durian only in beginning of the string
+echo ${fruit/#cherry/durian}	# will replace cherry with durian only in the end of the string
+echo ${fruit/c*/durian}			# will replace all instances start with "c" with durian 
+
+
+
+
