@@ -35,9 +35,9 @@ class Player():
 					self.bulletSpeed, 
 					self.bulletImage))
 
-	a = self.pygame.mixer.Sound(self.SoundEffect)
-	a.setVolume(0.2)
-	a.play()
+		a = self.pygame.mixer.Sound(self.SoundEffect)
+		a.setVolume(0.2)
+		a.play()
 
 	def drawBullets(self):
 		for b in self.bullets:
@@ -63,6 +63,54 @@ class Player():
 			return True
 
 	def __init__(self, x, y, pygame, surface):
-		
+		self.x = x
+		self.y = y
+		self.pygame = pygame
+		self.surface = surface
+		self.loadImages()
 
-		
+		dimensions = self.image.get_rect().size
+		self.width = dimensions[0]
+		self.height = dimensions[1]
+
+		self.x -= self.width / 2
+		self.y -= self.height + 10
+
+class Enemy(Player) :
+
+	x = 0
+	y = 0
+	firing = False
+	image = None
+	soundEffect = 'sounds/enemy_laser.wav'
+	bulletImage = 'assets/them_pellet.png'
+	bulletSpeed = 10
+	speed = 2
+
+	def move(self) :
+		self.y += self.speed
+
+	def tryToFire(self) :
+		shouldFire = random.random()
+
+		if shouldFire <= 0.01
+			self.fire()
+
+	def loadImages(self) :
+		self.image = self.pygame.image.load('assets/them_ship.png')
+
+	def __init__(self, x, y, pygame, surface, health) :
+		self.x = x
+		self.y = y
+		self.pygame = pygame
+		self.surface = surface
+		self.loadImages()
+		self.bullets = []
+		self.health = health
+
+		dimensions = self.image.get_rect().size
+		self.width = dimensions[0]
+		self.height = dimensions[1]
+
+		self.x -= self.width / 2
+
