@@ -1,0 +1,16 @@
+# notes on git take from cadecademy.com
+
+git init	 			# make git project. 
+git add filename		# add file to project
+git diff filename		# show diffirence
+
+git commit -m "commit message" 		# commit changes with message
+git log								# show commit history
+
+git show HEAD						# most recent commit
+git checkout HEAD filename			# restore file from last commit
+
+git reset HEAD filename				# undo last "git add" before you commit
+									# remove change from stage area
+
+git reset commit_SHA				# restore to the needed commit, commit_SHA - use first 7 chars
