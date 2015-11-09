@@ -152,6 +152,6 @@ echo ${fruit/#apple/durian}		# will replace apple with durian only in beginning 
 echo ${fruit/#cherry/durian}	# will replace cherry with durian only in the end of the string
 echo ${fruit/c*/durian}			# will replace all instances start with "c" with durian 
 
+# Colours
 
-
-
+echo -e '\033[34;42mColor Text\033[0m' 		# -e enable escape sequences, m - end of escape sequence, 34;42 - forgraund;background colors
