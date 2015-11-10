@@ -14,3 +14,14 @@ git reset HEAD filename				# undo last "git add" before you commit
 									# remove change from stage area
 
 git reset commit_SHA				# restore to the needed commit, commit_SHA - use first 7 chars
+
+
+# Branches
+
+git branch 							# tells you what branch you are on
+git branch new_branch				# create new branch
+
+git checkout branch_name			# switch to another branch
+git merge branch_name				# merge branch_name into master branch
+
+git branch -d branch_name			# delete branch
