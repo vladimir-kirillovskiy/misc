@@ -74,3 +74,25 @@ def greater_less_equal_5(answer):
     else:
         return 0
 
+
+// functions
+
+def spam():
+    eggs = 12
+    return eggs
+        
+print spam()
+
+// Imports
+
+import math                 # include math module
+math.sqrt(15)               # can use functions of math module
+from math import sqrt       # can import functions so we don't need to type math. infront of the function
+from math import *          # can import every thing, this is bad idea as function can conflict with each others
+
+// Build in function
+
+max(10,15,-15)              # return max value
+min(10,15,-15,-13)          # return min value           
+abs(-64)                    # return absolute value
+type(42)                    # return type of value, in this case it would be int (not a string)
