@@ -1,0 +1,58 @@
+
+// single line comment
+/* multilime comment */
+
+import java.util.Scanner;		// import libraries, Scanner - user input
+import java.util.*				// import whole library
+
+public class Animal {		// create public class
+	// public - available to every one
+	// static - shared by every animal object created
+	// final - constant, can't be changed
+	// double - variable type
+	public static final double FAVNUMBER = 1.6.180;
+
+	// private - can be only accessed by other method in the field
+	private String name;
+	private int weight;					// int -2^31 to 2^31
+	private boolean hasOwner = false;
+	private byte age;					// -128 to 127;
+	private long uniqueID;
+	private char favoriteChar;			// one character
+	private double speed;				// 
+	private float height;
+
+	protected static int numberOfAnimal = 0;		// can only be access from package
+
+	static Scanner userInput = new Scanner(System.in);			// create (instance of ?)scanner object, System.in - data from keyboard
+
+
+	/* Constructor */
+	public Animal(){
+		//super();					// supper() calls super class. eg: for dog class, Animal is supper class
+		numberOfAnimal++;			// increment
+
+		int sumOfNum = 5 + 1; 		// just math example
+		System.out.println("5 + 1 =" + sumOfNum);		// print out with line break
+		System.out.print("Enter name: \n");
+
+		if(userInput.hasNextLine()) {
+			this.setName(userInput.nextLine());				// this - referens to object created, setName doesn't exist as setters and getters not generated
+		}
+	}
+
+	public static void main(String[] args) {
+		Animal theAnimal = new Animal();
+	}
+
+}
+
+
+
+
+// Inheritance - Every field and method from Animal will be 
+// available for subclass
+public class Dog extends Animal {		// create sub class class for Animal
+
+	
+}
