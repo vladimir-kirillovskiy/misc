@@ -17,7 +17,7 @@ class Player():
 	health = 5
 
 	def loadImages(self):
-		self.image = self.pygame.image.load('assets/your_ship.png')
+		self.image = self.pygame.image.load('assets/you_ship.png')
 
 	def draw(self):
 		self.surface.blit(self.image, (self.x, self.y))
@@ -93,7 +93,7 @@ class Enemy(Player) :
 	def tryToFire(self) :
 		shouldFire = random.random()
 
-		if shouldFire <= 0.01
+		if shouldFire <= 0.01:
 			self.fire()
 
 	def loadImages(self) :
