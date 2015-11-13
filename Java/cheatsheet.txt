@@ -1,9 +1,11 @@
 
+/* using IDE Eclopse and JDK 1.8*/
+
 // single line comment
 /* multilime comment */
 
 import java.util.Scanner;		// import libraries, Scanner - user input
-import java.util.*				// import whole library
+import java.util.*;				// import whole library
 
 public class Animal {		// create public class
 	// public - available to every one
@@ -19,8 +21,8 @@ public class Animal {		// create public class
 	private byte age;					// -128 to 127;
 	private long uniqueID;
 	private char favoriteChar;			// one character
-	private double speed;				// 
-	private float height;
+	private double speed;				// 64 bit number
+	private float height;				// 32 bit number, not very accurate
 
 	protected static int numberOfAnimal = 0;		// can only be access from package
 
@@ -28,6 +30,7 @@ public class Animal {		// create public class
 
 
 	/* Constructor */
+	/* Right click - Source - Generate constructor using Fields */
 	public Animal(){
 		//super();					// supper() calls super class. eg: for dog class, Animal is supper class
 		numberOfAnimal++;			// increment
@@ -36,10 +39,34 @@ public class Animal {		// create public class
 		System.out.println("5 + 1 =" + sumOfNum);		// print out with line break
 		System.out.print("Enter name: \n");
 
-		if(userInput.hasNextLine()) {
+		// ways to return data and get right data types
+		// hasNextInt, hasNextFloat, hasNextDouble, hasNextBoolean, hasNextByte
+		// NextInt, NextFloat, NextDouble, NextBoolean, NextByte
+		if(userInput.hasNextLine()) {						// did they enter a STRING
 			this.setName(userInput.nextLine());				// this - referens to object created, setName doesn't exist as setters and getters not generated
 		}
 	}
+
+
+	/* Generate setters and Getters!*/
+	/* Right click - Source -  Generate setters and Getters */
+	public void setUniqueID(long uniqueID) {
+		this.uniqueID = uniqueID;
+		System.out.println("Unique ID Set to " + this.uniqueID);
+	}
+	
+	// method overload
+	public void setUniqueID() {
+		long minNumber = 1;
+		long maxNumber = 100000;
+		
+		this.uniqueID = minNumber + (long)(Math.random() * ((maxNumber - minNumber) + 1)); 	// (long) - cast
+		String stringNumber = Long.toString(maxNumber);		// convert to string
+		int numberString = Integet.parseInt(stringNumber);
+	}
+
+
+
 
 	public static void main(String[] args) {
 		Animal theAnimal = new Animal();
