@@ -63,6 +63,9 @@ print('first item', grocery_list[0])
 # print items between 1 and 3
 print(grocery_list[1:3])
 
+# print as string and join with spaces
+print " ".join(grocery_list)
+
 # list of lists
 to_do_list = [other_events, grocery_list]
 
