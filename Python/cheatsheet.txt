@@ -3,6 +3,10 @@ Python2 with www.codecademy.com
 No semicolons at the end of the line
 True and False start with capital letter
 indentation for functions
+Does not support ++/-- 
+The \ character is a continuation character. The following line is considered a continuation of the current line.
+
+
 
 def spam():
 	eggs = 12
@@ -96,3 +100,24 @@ max(10,15,-15)              # return max value
 min(10,15,-15,-13)          # return min value           
 abs(-64)                    # return absolute value
 type(42)                    # return type of value, in this case it would be int (not a string)
+
+// For loops
+
+names = ["Adam","Alex","Mariah","Martine","Columbus"]
+
+for i in names:
+    print i
+
+// can loop throu a string
+for letter in "Codecademy":
+    print letter
+
+
+// dictionaries
+
+prices = {
+    "banana": 4,
+    "apple": 2,
+    "orange": 1.5,
+    "pear": 3    
+}
