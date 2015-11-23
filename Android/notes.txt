@@ -1,0 +1,33 @@
+Icons - 512x512 png
+AndroidAssetStudio - can be used to generate icons
+
+// Layouts
+Vertical Linear 
+Horizontal
+Relative Layout
+Grid Layout
+
+// Dimentions  
+dimention.xml  		// keeps all dimentions in one place
+strings.xml 		// keeps all strings(For lables, buttons, etc ...) in one file
+					can have a multiple strings folders/files for different languages
+
+40dp 				// dencity independent pixels. So it will scale depend on screen dencity
+40sp				// scale independent pixels - use with fonts
+
+
+Toast.makeText(this, yourNoResponse, Toast.LENGTH_LONG).show();		// pop up message
+
+Log.i();	// informational log, to display into logcat
+
+// MVC paterns
+
+// Activities - Controllers
+// Layouts/XMLs - Views
+
+
+// Control ids
+android:id = "@+id/control_name" 		// + indicates that this is a new id
+android:layout_below = "@+id/textView" 	// put this button below textView
+
+EditText myEditText = (EditText) findViewById(R.id.myEditText);
