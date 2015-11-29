@@ -54,6 +54,29 @@ public class Animal {		// create public class
     // this form is discouraged
 	float anArrayOfFloats[];
 
+	// ArrayLists
+	// don't forget to inport ArrayList library
+	ArrayList<String> myArrayList = new ArrayList<String>();
+
+	myArrayList.add("String");
+	myArrayList.isEmpty();
+	myArrayList.get(0);
+	myArrayList.remove(0);
+	myArrayList.remove("String");
+
+	// loop though arraylist
+	for (String item : myArrayList) {}
+
+	// HashMaps - key-value pairs
+	// need to import
+	HashMap myHashMap = new HashMap();
+	myHashMap.put("Lady", "Bonni");		// insert key-value pair
+	myHashMap.get("Lady");				// get by key
+	myHashMap.values();					// print all values
+	myHashMap.containsKey("Lady");		// return bool
+	myHashMap.size();					// get size of HashMap
+
+
 
 	/* Constructor */
 	/* Right click - Source - Generate constructor using Fields */
