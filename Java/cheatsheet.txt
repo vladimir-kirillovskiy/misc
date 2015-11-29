@@ -12,6 +12,7 @@ public class Animal {		// create public class
 	// static - shared by every animal object created
 	// final - constant, can't be changed
 	// double - variable type
+	// protected - can be only accessed within this package
 	public static final double FAVNUMBER = 1.6.180;
 
 	// private - can be only accessed by other method in the field
@@ -27,6 +28,31 @@ public class Animal {		// create public class
 	protected static int numberOfAnimal = 0;		// can only be access from package
 
 	static Scanner userInput = new Scanner(System.in);			// create (instance of ?)scanner object, System.in - data from keyboard
+
+	// Arrays
+	int[] myArray = {1,3,5};
+	// or 
+	// declares an array of integers
+    int[] anArray;
+ 	// allocates memory for 10 integers
+    anArray = new int[10];
+    // initialize first element
+    anArray[0] = 100;
+    // initialize second element
+    anArray[1] = 200;
+    // and so forth
+    anArray[2] = 300;
+    anArray[3] = 400;
+    anArray[4] = 500;
+    anArray[5] = 600;
+    anArray[6] = 700;
+    anArray[7] = 800;
+    anArray[8] = 900;
+    anArray[9] = 1000;
+
+    //You can also place the brackets after the array's name
+    // this form is discouraged
+	float anArrayOfFloats[];
 
 
 	/* Constructor */

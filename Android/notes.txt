@@ -1,6 +1,13 @@
 Icons - 512x512 png
 AndroidAssetStudio - can be used to generate icons
 
+Before start create JAVA_HOME enviromental variable an appenf path variabe in same screen
+check output of java --version and javac
+Genymotion - alternative ADV
+more info for win and mac
+https://www.udemy.com/complete-android-developer-course
+
+
 // Layouts
 Vertical Linear 
 Horizontal
