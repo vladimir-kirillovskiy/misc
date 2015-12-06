@@ -24,6 +24,7 @@ strings.xml 		// keeps all strings(For lables, buttons, etc ...) in one file
 
 
 Toast.makeText(this, yourNoResponse, Toast.LENGTH_LONG).show();		// pop up message
+Toast.mekeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
 
 Log.i();	// informational log, to display into logcat
 
@@ -36,5 +37,13 @@ Log.i();	// informational log, to display into logcat
 // Control ids
 android:id = "@+id/control_name" 		// + indicates that this is a new id
 android:layout_below = "@+id/textView" 	// put this button below textView
+android:hint="enter your name"			// text pleceholder
 
 EditText myEditText = (EditText) findViewById(R.id.myEditText);
+myEditText.getText();
+
+
+// limit decimal points
+DecimalFormat round = new DecimalFormat("0.0");		// format to one decimal
+//cast to string
+String stringResult = String.valueOf(round.format(doubleValue)); 
