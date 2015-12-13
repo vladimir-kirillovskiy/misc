@@ -143,6 +143,9 @@ for x in range(0, 10):
 
 print("\n")
 
+# use zip to handle more than one element
+for a, b in zip(list_a, list_b):
+	#smlthng
 
 for y in grocery_list:
 	print(y)
