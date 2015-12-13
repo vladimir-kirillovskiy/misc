@@ -26,6 +26,7 @@ strings.xml 		// keeps all strings(For lables, buttons, etc ...) in one file
 Toast.makeText(this, yourNoResponse, Toast.LENGTH_LONG).show();		// pop up message
 Toast.mekeText(getApplicationContext(), "Enter a value", Toast.LENGTH_LONG).show();
 
+// log into console
 Log.i();	// informational log, to display into logcat
 
 // MVC paterns
