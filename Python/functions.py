@@ -77,3 +77,17 @@ def count(sequence, item):
             c += 1
 
     return c
+
+def purify(num_list):
+    new_list = []
+    for i in num_list:
+        print(i)
+        if i % 2 == 0:
+            new_list.append(i)
+    return new_list
+
+def product(intList):
+    result = 1;
+    for i in intList:
+        result *= i
+    return result
