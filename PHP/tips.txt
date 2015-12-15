@@ -1,0 +1,21 @@
+Switch Case faster than If-ElseIf
+
+echo is slightly faster than print
+
+pre-increment 10% faster than post-increment 
+
+echo $i++;  /* the printed value would be
+                   $i before the increment
+                   (post-increment) */
+				   
+echo ++$i;	/* the printed value would be
+                   $i after the increment
+                   (pre-increment) */			   
+				   
+				   
+for ($i = 1; $i <= 10; ++$i) {  // doesn't matter pre- or post-increment 
+    echo $i;
+}				   
+
+
+$row['id'] is 7 times faster than $row[id]

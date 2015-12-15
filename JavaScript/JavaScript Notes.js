@@ -1,18 +1,18 @@
 //JavaScript Reference
 // https://developer.mozilla.org/en-US/docs/JavaScript/Reference
 
-	//Ternary
+	/*Ternary*/
 var playerOne;
 var playerTwo
 // condition ? true:false
 var HighScore(playerOne > playerTwo) ? playerOne:playerTwo;
 
-	//Loops
+	/*Loops*/
 // While, Do While, For
 break;  //get out from loop
 continue; //go to begining of the loop
 
-	//Arrays
+	/*Arrays*/
 var array = []; // create array
 var array = Array(); //same
 var arr = [10,20,3,4,5]; //create arr and set values
@@ -27,7 +27,7 @@ console.log(arr.sort());
 var myArrayOfLinks = document.getElementsByTagName("p");
 console.log(myArrayOfLinks);
 
-	//Numbers
+	/*Numbers*/
 var foo = "55"; //could be "abc"
 var myNum = Number(foo); //makes it number, 
 //if not number return NaN
@@ -51,7 +51,7 @@ y = Math.random();
 a = Math.sqrt(c);
 b = Math.log();
 
-	// Strings
+	/*Strings*/
 var phrase = "He said \"that's fine\", and left.";
 phrase = "This is a simple phrase.";
 console.log(phrase.length);
@@ -64,7 +64,7 @@ var segm = phrase.slice(6,5);
 //.substring() and .substr() - similar
 string.trim() - trim variable from white spaces
 
-	//Date
+	/*Date*/
 var today = new Date(); //current date and time
 var y2k = new Date(2000,0,1); // year, month, day. Month 0-11
 var y2k = new Date(2000,0,1,0,0,0); // year, month, day, hours, minutes, seconds.
@@ -86,7 +86,7 @@ if (date1 == date2) {} // false
 
 if (date1.getTime() == date2.getTime()) {} //true
 
-	// Objects
+	/*Objects*/
 //create object
 var player = new Object();
 // create property of object
@@ -109,8 +109,8 @@ player2.logDetails = playerDetails;
 
 player2.logDetails();
 
-	//DOM
-	// get elements
+	/*DOM
+	get elements*/
 
 var myElement = document.getElementById("Id");
 var myListItems = document.getElementsByTagName("li"); //makes array 
@@ -128,14 +128,14 @@ var myListItems = document.getElementsByTagName("li");
 var myFirstList = document.getElementById("abc");
 var limitedList = myFirstList.getElementsByTagName("li");	
 	
-	// changing content
+	/*changing content*/
 
 myElement.getAttribute("align"); // "align" name of attribute
 myElement.setAttribute("align", "left"); // "align" - name, "left" - value 
 
 myElement.innerHTML = "New text"; // update content of element. Can include other tags.
 
-	//creating element
+	/*creating element*/
 
 //myElement - <ul id="abc">
 //create element
@@ -153,7 +153,7 @@ var myNewElement = document.createElement("li");
 var secondItem = myElement.getElementsByTagName("li")[1]; //second element in array, so second element in the list
 myElement.insertBefore(myNewElement, secondItem); // so inserted in second position in the list
 
-	//Events
+	/*Events*/
 
 <button onclick = ""> ...
 
@@ -193,34 +193,33 @@ fieldName.onblur = function() {
 	}
 };
 
-	//Timers
+	/*Timers*/
 
 // delay function start
 setTimeout(functionName, 5000); // name of function and interval in milliseconds
 // loop function with delay between loops
 setInterval(functionName,5000);  // name of function and interval in milliseconds
 
-//Simple slide show
-var myImage = document.getElementById("mainImage");
-
-var imageArray = ["_images/overlook.jpg","_images/winery_sign.jpg","_images/lunch.jpg",
-				  "_images/bigSur.jpg","_images/flag_photo.jpg","_images/mission_look.jpg"];
-var imageIndex = 0;
-
-function changeImage() {
-	myImage.setAttribute("src",imageArray[imageIndex]);
-	imageIndex++;
-	if (imageIndex >= imageArray.length) {
-		imageIndex = 0;
-	}
-}
-
-// setInterval is also in milliseconds
-var intervalHandle = setInterval(changeImage,5000);
-
-myImage.onclick =  function() {
-	clearInterval(intervalHandle);  //clear interval, stop slide show
-};
-
 
 arguments.caller() // is the function itself more generic way
+
+	/*bit Manipulation */
+
+var mask = 1 << 5; // gets the 6th bit
+
+//To test if a bit is set:
+
+if ((n & mask) != 0) {
+  // bit is set
+} else {
+  // bit is not set
+}
+//To set a bit:
+
+n |= mask;
+//To clear a bit:
+
+n &= ~mask;
+//To toggle a bit:
+
+n ^= mask;
