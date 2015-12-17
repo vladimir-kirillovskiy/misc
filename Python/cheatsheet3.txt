@@ -87,6 +87,7 @@ print(to_do_list)
 print(len(to_do_list))
 print(max(to_do_list))
 print(min(to_do_list))
+sorted(o_do_list)
 
 # Tuples - similar to list but can't change
 

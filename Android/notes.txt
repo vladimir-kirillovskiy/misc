@@ -48,3 +48,28 @@ myEditText.getText();
 DecimalFormat round = new DecimalFormat("0.0");		// format to one decimal
 //cast to string
 String stringResult = String.valueOf(round.format(doubleValue)); 
+
+// activities and intents
+// on first activity
+Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+intent.putExtra("key", value);
+
+startActivity(intent);
+startActivityForResult(intent, REQUEST_CODE);	// REQUEST_CODE = 1
+
+protected void onActivityResult(int requestCode, int resultCode, Intent data){
+	if(requestCode == REQUEST_CODE){
+		if(resultCode == RESULT_OK){
+			String result = data.getStringExtra("returnData");
+		}
+	}
+}
+
+// on second activity
+Bundle extras = getIntent().getExtras();
+String str = extras.getString('key'); 
+
+Intent returnIntent = getIntent();
+returnIntent = ('returnIntent', 'from second activity');
+setResult(RESULT_OK, returnIntent);
+finish();

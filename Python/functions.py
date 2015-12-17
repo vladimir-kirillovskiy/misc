@@ -99,3 +99,19 @@ def remove_duplicates(lst):
             new_list.append(i)
             
     return new_list
+
+def median(lst):
+    lst = sorted(lst)
+    lstLen = len(lst)
+    if lstLen % 2 == 0 and lstLen > 2:
+        index1 = lstLen / 2
+        index2 = index1 - 1
+        
+        return (lst[index1] + lst[index2]) / 2.0
+    elif lstLen == 1:
+        return lst[0]
+    elif lstLen == 2:
+        return (lst[0] + lst[1]) / 2.0
+    else:
+        return lst[lstLen/2]
+        
