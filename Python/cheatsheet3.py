@@ -1,10 +1,10 @@
-Python 3.0
-https://www.youtube.com/watch?v=N4mEzFDjqtA
+# Python 3.0
+# https://www.youtube.com/watch?v=N4mEzFDjqtA
 
-!!! NO SEMICOLONS !!!
-!!! Does not support ++/-- !!!
+# !!! NO SEMICOLONS !!!
+# !!! Does not support ++/-- !!!
 
-The \ character is a continuation character. The following line is considered a continuation of the current line.
+# The \ character is a continuation character. The following line is considered a continuation of the current line.
 
 
 
@@ -87,7 +87,7 @@ print(to_do_list)
 print(len(to_do_list))
 print(max(to_do_list))
 print(min(to_do_list))
-sorted(o_do_list)
+print(sorted(to_do_list))
 
 # Tuples - similar to list but can't change
 
@@ -125,8 +125,7 @@ else :
 	print("You are not old enough to drive")
 
 # logical operators
-
-and or not
+# and or not
 
 if ((age >= 1) and (age <= 18)) :
 	print("Lol")
@@ -213,7 +212,7 @@ print(long_string[0:4] + "be there")
 # %c - char
 # %s - string 
 # %d - digit/int
-# %.5f - floa with 5 decimal places 
+# %.5f - float with 5 decimal places 
 print("%c is my %s letter and my number %d is %.5f" % ('X', 'favorite', 1, .14 ))
 
 # capitalize first letter
@@ -349,3 +348,9 @@ test_animals = AnimalTesting()
 
 test_animals.get_type(cat) 
 test_animals.get_type(dog) 
+
+
+# try exept:
+def index_power(array, n):
+    try: return array[n] ** n
+    except IndexError: return -1 		# can be different types of exeptions

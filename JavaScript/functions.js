@@ -48,7 +48,7 @@ function flagHandle(type, interestBit, value) {
 
 alert( flagHandle("set", 8, 12));
 
-//Simple slide show
+//Simple slide show on js
 var myImage = document.getElementById("mainImage");
 
 var imageArray = ["_images/overlook.jpg","_images/winery_sign.jpg","_images/lunch.jpg",
@@ -64,7 +64,7 @@ function changeImage() {
 }
 
 // setInterval is also in milliseconds
-var intervalHandle = setInterval(changeImage,5000);
+var intervalHandle = setInterval(changeImage, 5000);
 
 myImage.onclick =  function() {
 	clearInterval(intervalHandle);  //clear interval, stop slide show

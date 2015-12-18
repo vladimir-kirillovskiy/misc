@@ -1,10 +1,10 @@
 Python2 with www.codecademy.com
 
-No semicolons at the end of the line
-True and False start with capital letter
-indentation for functions
-Does not support ++/-- 
-The \ character is a continuation character. The following line is considered a continuation of the current line.
+# No semicolons at the end of the line
+# True and False start with capital letter
+# indentation for functions
+# Does not support ++/-- 
+# The \ character is a continuation character. The following line is considered a continuation of the current line.
 
 
 
@@ -19,23 +19,23 @@ print spam()
 	multi line comment
 """
 
-// MATH
+# MATH
 
 ** - power of(^)
 
-// STRINGS
+# STRINGS
 
 multi_line_str = ''' multi
 line
 string '''
 
 str = "str";
-str[2] # "r"
-str[1:2]    # "tr"
-len(str)
+str[2]          # "r"
+str[1:2]        # "tr"
+len(str)        
 str.lower()
 str.upper()
-str() 	# cast to string
+str()       	# cast to string
 str.isalpha()   # check is it is only letters. True/False
 
 # Methods that use dot notation only work with strings.
@@ -47,11 +47,11 @@ str = "%s, %s" % ("Hello", "World")
 
 raw_input("question") # get input from console
 
-// DATETIME
+# DATETIME
 
-from datetime import datetime 	# include datetime library
+from datetime import datetime	  # include datetime library
 
-now = datetime.now() 	# get current date 
+now = datetime.now() 	          # get current date 
 print now
 print now.year
 print now.month
@@ -62,13 +62,13 @@ print now.second
 
 print '%s-%s-%s' % (now.year, now.month, now.day)	# print mm/dd/yyyy
 
-// BOOLEAN
+# BOOLEAN
 NOT is evaluated first;
 AND is evaluated next;
 OR 	is evaluated last.
 
 
-// FLOW CONTROL
+# FLOW CONTROL
 	
 def greater_less_equal_5(answer):
     if answer > 5:
@@ -79,7 +79,7 @@ def greater_less_equal_5(answer):
         return 0
 
 
-// functions
+# functions
 
 def spam():
     eggs = 12
@@ -87,21 +87,21 @@ def spam():
         
 print spam()
 
-// Imports
+# Imports
 
 import math                 # include math module
 math.sqrt(15)               # can use functions of math module
 from math import sqrt       # can import functions so we don't need to type math. infront of the function
 from math import *          # can import every thing, this is bad idea as function can conflict with each others
 
-// Build in function
+# Build in function
 
 max(10,15,-15)              # return max value
 min(10,15,-15,-13)          # return min value           
 abs(-64)                    # return absolute value
 type(42)                    # return type of value, in this case it would be int (not a string)
 
-// For loops
+# For loops
 
 names = ["Adam","Alex","Mariah","Martine","Columbus"]
 
@@ -113,7 +113,7 @@ for letter in "Codecademy":
     print letter
 
 
-// dictionaries
+# dictionaries
 
 prices = {
     "banana": 4,
