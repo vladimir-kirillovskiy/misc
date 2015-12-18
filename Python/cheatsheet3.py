@@ -20,6 +20,7 @@ import os
 
 # print string
 print('Hello World')
+print(a, b)		 # better than print(a + " " + b)
 
 #variable 
 name = "Vlad"
@@ -89,6 +90,9 @@ print(max(to_do_list))
 print(min(to_do_list))
 print(sorted(to_do_list))
 
+int_list = [1,2,3,4,5]
+sum(array[0::2])			# sum(1,3,5) return every second element in a list
+
 # Tuples - similar to list but can't change
 
 pi_tuple = (3,1,4,1,5,9)
@@ -112,6 +116,7 @@ print(len(super_villains))
 print(super_villains.get('Fiddler'))
 print(super_villains.keys())
 print(super_villains.values())
+print(super_villains.items())
 
 # Conditionals
 
