@@ -108,7 +108,7 @@ names = ["Adam","Alex","Mariah","Martine","Columbus"]
 for i in names:
     print i
 
-// can loop throu a string
+# can loop throu a string
 for letter in "Codecademy":
     print letter
 

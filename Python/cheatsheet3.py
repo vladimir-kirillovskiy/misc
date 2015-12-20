@@ -89,9 +89,23 @@ print(len(to_do_list))
 print(max(to_do_list))
 print(min(to_do_list))
 print(sorted(to_do_list))
-
 int_list = [1,2,3,4,5]
-sum(array[0::2])			# sum(1,3,5) return every second element in a list
+sum(int_list[::2])			# sum(1,3,5) return every second element in a list
+
+
+# Comprehensions
+# consist of the cubes of the numbers 1 through 10 only if the cube is evenly divisible by four.
+cubes_by_four = [x ** 3 for x in range(1, 11) if (x ** 3) % 4 == 0]		
+print([x * 2 for x in range(10) if x % 2 == 0])		# another example
+
+# list slising
+# [start:end:stride] 
+print l[2:9:2]
+
+# we can omit start and end as we using enire arrays
+int_list = [1,2,3,4,5]
+print(int_list[::2])			# return every second element in a list
+print(int_list[::-1])			# return reversed list
 
 # Tuples - similar to list but can't change
 
@@ -199,6 +213,14 @@ print('What is your name?')
 name = sys.stdin.readline()
 print('Hello', name)
 
+# Anonymous Functions
+# with anonymus functions we can pass functions as parameters
+my_list = range(16)
+# filter my_list against anonymus function  
+print filter(lambda x: x % 3 == 0, my_list) 	# return [0, 3, 6, 9, 12, 15]
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+print filter(lambda x: x == "Python", languages)
+
 # strings
 
 long_string = "i'll catch you if you fall - The Floor"
@@ -239,6 +261,7 @@ print(long_string.strip())
 
 # split string into list
 qoute_list = long_string.split(" ")
+
 
 # file io 
 
