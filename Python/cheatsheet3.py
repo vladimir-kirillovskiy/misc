@@ -382,3 +382,39 @@ test_animals.get_type(dog)
 def index_power(array, n):
     try: return array[n] ** n
     except IndexError: return -1 		# can be different types of exeptions
+
+
+# bitwise operators
+
+print (5 >> 4)  # Right Shift
+print (5 << 1)  # Left Shift
+print (8 & 5)   # Bitwise AND
+print (9 | 4)   # Bitwise OR
+print (12 ^ 42) # Bitwise XOR
+print (~88)     # Bitwise NOT
+
+# In Python, you can write numbers in binary format 
+# by starting the number with 0b. When doing so, the numbers 
+# can be operated on like any other number!
+
+print 0b1,    #1
+print 0b10,   #2
+print 0b11,   #3
+print 0b100,  #4
+print 0b101,  #5
+print 0b110,  #6
+print 0b111   #7
+
+bin(dec) 	# takes decimal and returns binary
+hex(dec)	# takes decimal and returns hex
+oct(dec)	# takes decimal and returns oct
+
+# convert 110 bin to decimal
+int("110", 2) 		# will return  6
+
+# Left Bit Shift (<<)  
+0b000001 << 2 == 0b000100 (1 << 2 = 4)
+0b000101 << 3 == 0b101000 (5 << 3 = 40)       
+
+# Right Bit Shift (>>)
+0b0010100 >> 3 == 0b000010 (20 >> 3 = 2)
