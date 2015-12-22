@@ -418,3 +418,19 @@ int("110", 2) 		# will return  6
 
 # Right Bit Shift (>>)
 0b0010100 >> 3 == 0b000010 (20 >> 3 = 2)
+
+# AND
+print bin(0b1110 & 0b101)
+
+# OR
+print bin(0b1110 | 0b101)
+
+# XOR
+print bin(0b1110 ^ 0b101)
+
+# NOT 
+print ~1 	# -2
+print ~2 	# -3
+print ~3 	# -4
+print ~42 	# -43
+print ~123	# -124
