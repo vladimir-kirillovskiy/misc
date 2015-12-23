@@ -115,3 +115,12 @@ def median(lst):
     else:
         return lst[lstLen/2]
         
+
+# bitwise 
+def check_bit4(input):
+    mask = 0b1000
+    desired = input & mask
+    if desired:
+        return "on"
+        
+    return "off"
