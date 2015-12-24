@@ -117,6 +117,7 @@ def median(lst):
         
 
 # bitwise 
+# check bit
 def check_bit4(input):
     mask = 0b1000
     desired = input & mask
@@ -124,3 +125,8 @@ def check_bit4(input):
         return "on"
         
     return "off"
+# turn bit on
+def turn_bit2_on(input):
+    mask = 0b100
+    desired =  input | mask
+    return desired 
