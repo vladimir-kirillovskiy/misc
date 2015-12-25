@@ -130,3 +130,10 @@ def turn_bit2_on(input):
     mask = 0b100
     desired =  input | mask
     return desired 
+
+# flip bit
+def flip_bit(number, n):
+    mask = 0b1
+    mask = mask << n - 1
+    result = number ^ mask
+    return bin(result)
