@@ -247,7 +247,6 @@ print(long_string.capitalize())
 
 # find string(case sensetive)
 print(long_string.find("Floor"))
-
 # check if only letters
 print(long_string.isalpha())
 # check if number
