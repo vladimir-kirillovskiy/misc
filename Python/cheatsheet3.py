@@ -134,7 +134,7 @@ print(super_villains.items())
 
 # Conditionals
 
-if else elif == != > >= < <=
+# if else elif == != > >= < <=
 
 age = 21
 
@@ -266,6 +266,10 @@ qoute_list = long_string.split(" ")
 
 # open or create file
 # "ab+" to read & append to file
+# "r+" read and write
+# "w" write only
+# "r" read only
+# "a" append	
 test_file = open("test.txt", "ab+")
 
 print(test_file.mode)
@@ -281,14 +285,16 @@ test_file = open("test.txt", "r+")
 text_in_file = test_file.read()
 
 print(text_in_file)
-
+print(test_file.readline())
 # remove file
 # os module used
 os.remove("test.txt")
 
 # Objects
 
-class Animal :
+# can inherit from object class
+# class Animal(object):
+class Animal:
 	 # None signifies the lack of a value
     # You can make a variable private by starting it with __
 	#__name = None
@@ -333,9 +339,9 @@ class Dog(Animal) :
 	__owner = None
 
 	def __init__(self, name, height, weight, sound, owner) :
-			self.__owner = owner
-			# use constructor form super class(Animal)
-			super(Dog, self).__init__(name, height, weight, sound)
+		self.__owner = owner
+		# use constructor form super class(Animal)
+		super(Dog, self).__init__(name, height, weight, sound)
 
 	def set_owner (self, owner) :
 		self.__owner = owner
