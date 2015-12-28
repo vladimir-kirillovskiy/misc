@@ -277,7 +277,10 @@ print(test_file.name)
 
 test_file.write(bytes("Write me to the file\n", 'UTF-8'))
 
+# very important to close your file
 test_file.close()
+# to tell you if file closed, bool value
+test_file.closed 
 
 # read from file
 # "r+" read and write
@@ -289,6 +292,16 @@ print(test_file.readline())
 # remove file
 # os module used
 os.remove("test.txt")
+
+# another way to open file
+# it will close the file for us
+with open("text.txt", "w") as textfile:
+	textfile.write("Success!")
+# test if file is closed
+if not my_file.closed:
+    my_file.close()
+    
+print my_file.closed
 
 # Objects
 
