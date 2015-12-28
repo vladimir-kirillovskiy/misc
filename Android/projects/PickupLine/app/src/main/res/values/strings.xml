@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">PickupLine</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_line">LineActivity</string>
-    <string name="pickup_button">Clean</string>
-    <string name="pickup_button2">Dirty</string>
-</resources>
