@@ -89,6 +89,8 @@ print(len(to_do_list))
 print(max(to_do_list))
 print(min(to_do_list))
 print(sorted(to_do_list))
+print(sorted(list_of_ints, key=int))	# sort numeric values
+
 int_list = [1,2,3,4,5]
 sum(int_list[::2])			# sum(1,3,5) return every second element in a list
 
