@@ -402,6 +402,18 @@ test_animals.get_type(dog)
 def index_power(array, n):
     try: return array[n] ** n
     except IndexError: return -1 		# can be different types of exeptions
+    except ValueError: return -1 
+    except (RuntimeError, TypeError, NameError): return -1
+    except OSError as err:
+  		print("OS error: {0}".format(err))
+  	# The last except clause may omit the exception name(s), 
+  	# to serve as a wildcard. Use this with extreme caution, 
+  	# since it is easy to mask a real programming error in this way! 
+  	# It can also be used to print an error message and then 
+  	# re-raise the exception (allowing a caller to handle the exception as well):
+  	except:								# 
+    	print("Unexpected error:", sys.exc_info()[0])	# need to load sys module
+    	raise
 
 
 # bitwise operators
