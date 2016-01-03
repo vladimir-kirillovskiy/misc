@@ -1,0 +1,8 @@
+// Notes for Unity and C#
+
+// Ctrl + '   - will open Unity scription API
+
+// key input
+if (Input.GetKeyDown (KeyCode.UpArrow)) {
+	print ("Up key was pressed");
+}
