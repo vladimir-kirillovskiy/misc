@@ -1,0 +1,109 @@
+Web Design and Freelance Notes
+
+http://despreneur.com/30-best-websites-to-learn-design-and-development/
+
+Typography:
+Lineheigth = font size * multilier 
+mumtiplier can be between 1.4 and 1.7
+
+2 type faces more than enough
+http://fontpair.co/ 	- useful site
+
+Colors:
+
+https://color.adobe.com/ 	- nice color schemer
+
+choose 1 or 2 main colors and choose neutral colors to support main colors
+
+White Space:
+
+Use to keep app clean and clear
+
+Visual Hierarchy:
+
+Use color, size, weigth, contrast, aligment and etc...
+
+Images:
+
+Use Hi quality images
+http://despreneur.com/?s=stock 	 - lists with free stock photos
+
+
+Employing AIDA model:
+
+AIDA: Attention-Interest-Desire-Action
+
+Catch Attention with big image and very few additional elements
+Add description and more photos for Interest
+This should lead to Desire
+Action can be Buy button or some links
+
+Develop Design style guide:
+
+http://designmodo.com/create-style-guides/
+http://designmodo.com/style-guides/
+
+Using Patterns:
+
+http://zurb.com/patterntap
+http://ui-cloud.com/categories/
+http://ui-patterns.com/patterns
+
+Don't Reinvent the wheel:
+
+http://freebiesbug.com/
+https://dribbble.com/
+
+Know your end goal - plan ahead:
+
+Sketch on paper -  top area, main area, footer, details  
+
+Photoshop:
+
+http://www.fastprint.co.uk/adobe-shortcut-mapper/		- shortcuts for photoshop
+
+Photoshop tips and tricks:
+
+make sure that ruler and types in pixels:
+Edit->Preferences->Units & Rulers
+Color manage:
+Edit->Assagn Profie->Don't Color manage This Document
+Edit->Color Settings->RGB->Monitor RGB
+View->Proof Setup->Monitor RGB 
+
+
+Bisiness side of freelance:
+
+http://despreneur.com/most-common-mistakes-freelancers-make/
+http://despreneur.com/common-freelance-mistakes-web-designers-make/
+
+need to register as self employed
+need to have Web Design Proposal Template
+
+http://proposify.biz/proposal-templates/web-design
+https://proposable.com/templates/Web-Design-Proposal-Template
+
+http://nusii.com/
+
+Think about benefits over features!!!
+Why-How-What
+
+Developing your unique selling proposition:
+Reaching your target audience:
+
+Building reputation:
+
+blogging
+web site
+
+How much to charge:
+
+start wherever
+https://hourlyrate.beewits.com/
+https://www.awesomeweb.com/skill/web-design
+
+based on value vs hourly rate
+
+Portfolio:
+
+build in tumbler, wordpress
