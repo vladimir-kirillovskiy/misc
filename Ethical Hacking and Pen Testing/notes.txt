@@ -1,0 +1,17 @@
+White/Gray/Black hats
+Footprinting 		- researching, information gathering
+Dos (just you) 		- Denial of service (apache can handle about 10000 requests)
+DDos (Multiple people) 
+FUD (anti-virus can not detect)		- fully undetectable
+RAT					- remote administration tools
+Fishing 
+SQL Injections		- pass sql queries with http requests
+VPN					- virtual private networks, way to anonymise yourself
+Proxy				- less reliable way to stay anonymos
+Tor					- free open sorce, better than proxy, almost 100% anonymos, can access hidden/dark web
+VPS					- Virtual private servers
+Key Loggers			- Log key strokes and send to email address, some can extract existing information. Can do other stuff
+Terminal			- interface for operation system
+Firewall			- configured through ip table
+Root kit			- able to hide processes from system itself
+Reverse-shells		- program that opens  reverce connection
