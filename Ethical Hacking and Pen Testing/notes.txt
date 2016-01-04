@@ -15,3 +15,9 @@ Terminal			- interface for operation system
 Firewall			- configured through ip table
 Root kit			- able to hide processes from system itself
 Reverse-shells		- program that opens  reverce connection
+
+
+VM set up:
+VirtualBox
+Add repositories
+install dkms and linux-headers-$(uname -r)

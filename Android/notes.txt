@@ -73,3 +73,17 @@ Intent returnIntent = getIntent();
 returnIntent = ('returnIntent', 'from second activity');
 setResult(RESULT_OK, returnIntent);
 finish();
+
+
+// ListViews 
+
+final String[] values = new String[]{
+        "List 1",
+        "List 2",
+        "List 3",
+        "List 4",
+        "List 5"};
+
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+        android.R.layout.simple_list_item_1, android.R.id.text1, values);
+listView.setAdapter(adapter);
