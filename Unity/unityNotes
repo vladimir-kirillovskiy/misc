@@ -6,3 +6,9 @@
 if (Input.GetKeyDown (KeyCode.UpArrow)) {
 	print ("Up key was pressed");
 }
+
+// print into console
+print ("Messages");
+
+// enums
+private enum weekend {sat, sun}
