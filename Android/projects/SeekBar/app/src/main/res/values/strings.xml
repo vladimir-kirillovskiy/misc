@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SeekBar</string>
+    <string name="title">scale 1-10</string>
+    <string name="niceText">Scale:</string>
+</resources>

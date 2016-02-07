@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyRadioButtons</string>
+    <string name="title_name">Will You Be There</string>
+    <string name="positive_choice">Yes</string>
+    <string name="negative_choice">No</string>
+    <string name="maybe_choice">Maybe</string>
+    <string name="button_title">Show Choice</string>
+</resources>

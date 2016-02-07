@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloAgain</string>
+    <string name="action_settings">Settings</string>
+    <string name="buttin_1_text">You Clicked </string>
+</resources>

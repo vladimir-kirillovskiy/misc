@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:padding="3dp"
+        android:layout_alignParentLeft="true"
+        android:background="#ffeeeade"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/listImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/title"
+        android:layout_alignTop="@+id/thumbnail"
+        android:text="The Alchemist"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#040404"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/author"
+        android:layout_below="@+id/title"
+        android:text="Paulo Coelho"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/pages"
+        android:text="234 pages"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/title"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@android:drawable/ic_media_play"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DogOrCat</string>
+    <string name="canine_text">Are You Afrade of Canine?</string>
+    <string name="no_text">No</string>
+    <string name="yes_text">Yes</string>
+    <string name="scale_text">On a scale 1 to 10 how comfortable are you around felines?</string>
+    <string name="defaultSeekBarText">Comfortableness: 0/10</string>
+    <string name="cutest_text">Which one are cutest:</string>
+    <string name="dog_title">Dog</string>
+    <string name="cat_title">Cat</string>
+    <string name="parrot_title">Parrot</string>
+    <string name="drool_text">Are you ok with creatures that drool?</string>
+    <string name="button_title">Show Results</string>
+    <string name="title">You are a...</string>
+    <string name="result_text">dog or Cat</string>
+</resources>
