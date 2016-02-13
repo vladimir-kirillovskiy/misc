@@ -1,0 +1,123 @@
+body {
+	font-family: 'Open Sans';
+}
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.logo-bar {
+	background-image: url('../img/shanti_logo.jpg');
+	width: 100%;
+	height: 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+
+}
+
+.logo-bar .logo-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-size: 15px;
+}
+
+.nav a {
+  color: #5a5a5a;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav .row {
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #555;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.nav li {
+  display: inline;
+}
+
+.jumbotron {
+  background-image:url('../img/grad.jpg');
+  height: 180px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 30px;
+}
+
+.jumbotron h2 {
+  color: #fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.main-area {
+	margin-top: 10px;
+}
+
+.main-area .gallery {
+	border: 1px solid #555;
+	text-align: center;
+	background-color: #eee;
+	margin: 10px;
+}
+
+
+.main-area .col-md-6 h3:after {
+    /*display: inline-block;
+    margin: 0 0 8px 20px;
+    height: 3px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999;
+    width: 140px;*/
+    content: " ";
+    display: inline-block;
+    margin: 0 0 8px 20px;
+    height: 3px;
+    width: 140px;
+    /*background-color: #999;*/
+    background-image: url('../img/Divider-I.png');
+}
+
+
+.main-area .col-md-6 h3:before {
+    /*display: inline-block;
+    margin: 0 0 8px 20px;
+    height: 3px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999;
+    width: 140px;*/
+}
+
+.sale-item {
+	display: inline-block;
+	margin: 15px;
+	vertical-align: top;
+}
+
+.sale-item img {
+	margin-bottom: 5px;
+}
+
+.sale-item p {
+	max-width: 100px;
+	text-align: center;
+}
+
+.footer {
+  margin-top: 100px;
+  width: 100%;
+  height: 120px;
+  background-color: #ccc;
+}
