@@ -1,0 +1,18 @@
+<title> tag
+<meta name="description" content=""> tag
+url names
+links
+
+Google keywords planer
+
+<h1> headers
+<img src="" alt=""> alt tags for images
+<a href=""> link text </a>
+avoid query strings in url
+
+w3c validation
+fast site - google page speed tools
+robot.txt
+sitemap xml
+404 page for users
+Google analitics
