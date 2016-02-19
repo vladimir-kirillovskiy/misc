@@ -5,8 +5,16 @@ body {
 	margin-top: 10px;
 }
 
+.float-right {
+  float: right;
+}
+
+.float-clear {
+   clear: both;
+}
+
 .logo-bar {
-	background-image: url('../img/shanti_logo.jpg');
+	background-image: url('../img/shanti_logo_new.png');
 	width: 100%;
 	height: 200px;
 	background-position: center;
@@ -71,39 +79,65 @@ body {
 	margin: 10px;
 }
 
+.main-area .col-md-6 h3 {
+  border-bottom: 2px solid #000;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.main-area .col-md-6 h3 span {
+  position: absolute;
+  background: #fff;
+  padding: 0 5px;
+  bottom: -13px;
+  font-size: 22px;
+  line-height: 26px;
+  margin-left: 30px;
+}
+
+/*.main-area .col-md-6 h3:before {
+  content: url("../img/left.png");
+  position: absolute;
+  left: 0;
+}
 
 .main-area .col-md-6 h3:after {
-    /*display: inline-block;
-    margin: 0 0 8px 20px;
-    height: 3px;
+  content: url("../img/right.png");
+  position: absolute;
+  right: 0;
+}
+
+*/
+/*.main-area .col-md-6 h3:after {
+    display: inline-block;
+    margin: 0 5px 0px 10px;
+    height: 2px;
     content: " ";
     text-shadow: none;
-    background-color: #999;
-    width: 140px;*/
-    content: " ";
+    background-color: #444;
+    width: 13%;
+}*/
+
+
+/*.main-area .col-md-6 h3:before {
     display: inline-block;
     margin: 0 0 8px 20px;
-    height: 3px;
-    width: 140px;
-    /*background-color: #999;*/
-    background-image: url('../img/Divider-I.png');
-}
-
-
-.main-area .col-md-6 h3:before {
-    /*display: inline-block;
-    margin: 0 0 8px 20px;
-    height: 3px;
+    height: 2px;
     content: " ";
     text-shadow: none;
-    background-color: #999;
-    width: 140px;*/
+    background-color: #000;
+    width: 40px;
 }
-
+*/
 .sale-item {
 	display: inline-block;
-	margin: 15px;
+	margin: 10px;
+  padding: 5px;
+  width: 120px;
+  height: 155px;
 	vertical-align: top;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
 .sale-item img {

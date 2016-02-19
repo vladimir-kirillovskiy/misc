@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#eee"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:text="My Wish List"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="60dp"
+        android:background="#fff"
+        android:hint="Enter Title"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+    
+    <EditText
+        android:id="@+id/wishEditText"
+        android:hint="Enter a wish"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/titleEditText"
+        android:background="#fff"
+        android:gravity="start"
+        android:layout_marginTop="30dp"
+        android:layout_width="250dp"
+        android:layout_height="150dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/wishEditText"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
