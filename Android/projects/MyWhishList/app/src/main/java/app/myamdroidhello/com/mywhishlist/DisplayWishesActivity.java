@@ -1,8 +1,8 @@
 package app.myamdroidhello.com.mywhishlist;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import data.DatabaseHandler;
 import model.MyWish;
 
-public class DisplayWishesActivity extends AppCompatActivity {
+public class DisplayWishesActivity extends Activity {
     private DatabaseHandler dba;
     private ArrayList<MyWish> dbWishes = new ArrayList<>();
     private WishAdapter wishAdapter;
@@ -40,11 +40,13 @@ public class DisplayWishesActivity extends AppCompatActivity {
             String title = wishesFromDB.get(i).getTitle();
             String dateText = wishesFromDB.get(i).getRecorddate();
             String content = wishesFromDB.get(i).getContent();
+            int mid = wishesFromDB.get(i).getItemId();
 
             MyWish myWish = new MyWish();
             myWish.setTitle(title);
             myWish.setContent(content);
             myWish.setRecorddate(dateText);
+            myWish.setItemId(mid);
 
             dbWishes.add(myWish);
         }
@@ -115,13 +117,33 @@ public class DisplayWishesActivity extends AppCompatActivity {
             holder.mTitle.setText(holder.myWish.getTitle());
             holder.mDate.setText(holder.myWish.getRecorddate());
 
+
+            final ViewHolder finalHolder = holder;
+            holder.mTitle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String text = finalHolder.myWish.getContent();
+                    String dateText = finalHolder.myWish.getRecorddate();
+                    String title = finalHolder.myWish.getTitle();
+
+                    Intent i = new Intent(DisplayWishesActivity.this, WishDetailActivity.class);
+                    i.putExtra("content", text);
+                    i.putExtra("date", dateText);
+                    i.putExtra("title", title);
+
+                    startActivity(i);
+                }
+            });
+
             return row;
 
         }
 
         class ViewHolder {
             MyWish myWish;
-            TextView mTitle, mId, mContent, mDate;
+            TextView mTitle, mContent, mDate;
+            int mId;
         }
     }
 

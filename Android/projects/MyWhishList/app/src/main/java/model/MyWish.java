@@ -5,6 +5,15 @@ package model;
  */
 public class MyWish {
     public String title, content, recorddate;
+    public int itemId;
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
 
     public String getTitle() {
         return title;

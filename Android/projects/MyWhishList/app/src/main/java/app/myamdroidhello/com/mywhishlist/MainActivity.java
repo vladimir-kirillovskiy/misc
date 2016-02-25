@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         title.setText("");
         content.setText("");
 
-        Intent i = new Intent(MainActivity.this, WishDetailActivity.class);
+        Intent i = new Intent(MainActivity.this, DisplayWishesActivity.class);
         startActivity(i);
     }
 }
