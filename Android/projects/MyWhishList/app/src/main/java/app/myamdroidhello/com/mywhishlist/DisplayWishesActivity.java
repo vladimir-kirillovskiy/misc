@@ -127,10 +127,13 @@ public class DisplayWishesActivity extends Activity {
                     String dateText = finalHolder.myWish.getRecorddate();
                     String title = finalHolder.myWish.getTitle();
 
+                    int mId = finalHolder.myWish.getItemId();
+
                     Intent i = new Intent(DisplayWishesActivity.this, WishDetailActivity.class);
                     i.putExtra("content", text);
                     i.putExtra("date", dateText);
                     i.putExtra("title", title);
+                    i.putExtra("id", mId);
 
                     startActivity(i);
                 }

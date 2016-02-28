@@ -7,6 +7,9 @@
 		<!-- <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css"> -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
+		<script src="js/jquery-1.12.1.min.js"></script>
+		<script src="js/carousel.js"></script>
+		<script src="js/transition.js"></script>
 		<title> Shanti fashion - Мода на женственность </title>
 	</head>
 	<body>
@@ -31,60 +34,56 @@
 					<div class="col-md-4 col-sm-4 menu-item"> <a href="#">Контакты</a> </div>
 				</div>
 
-				<div class="jumbotron">
-					<div class="container text-center">
-						<h2>Гармония Женственность Любовь</h2>
-					</div>
-				</div> 
 			</div>
 
 			<div class="row main-area"> 
-				<div class="col-md-6 col-sm-6"> 
-					<h3><span> Вдохновляйся </span></h3>
-					<div class="gallery">
-						<img src="img/dress.jpg" width="300" />
+				<div class="carousel-main carousel slide" data-ride="carousel" data-interval="false">
+				<!-- 	<ol class="carousel-indicators">
+					    <li data-target=".carousel" data-slide-to="0" class="active"></li>
+					    <li data-target=".carousel" data-slide-to="1"></li>
+						<li data-target=".carousel" data-slide-to="2"></li>
+					</ol> -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="slide-item">
+								<img src="img/bigDresses/(4).jpg" />
+							</div>
+							<div class="slide-item">
+								<img src="img/bigDresses/(5).jpg" />
+							</div>
+							<div class="slide-item">
+								<img src="img/bigDresses/(6).jpg" />
+							</div>	
+						</div>	
+						<div class="item">
+							<div class="slide-item">
+								<img src="img/bigDresses/(7).jpg" />
+							</div>
+							<div class="slide-item">
+								<img src="img/bigDresses/(8).jpg" />
+							</div>
+							<div class="slide-item">
+								<img src="img/bigDresses/(9).jpg" />
+							</div>	
+						</div>	
+						<div class="item">
+							<div class="slide-item">
+								<img src="img/bigDresses/(10).jpg" />
+							</div>
+							<div class="slide-item">
+								<img src="img/bigDresses/(11).jpg" />
+							</div>
+							<div class="slide-item">
+								<img src="img/bigDresses/(12).jpg" />
+							</div>	
+						</div>	
 					</div>
-					<div class="row">
-						<div class="col-md-12 col-sm-12"> 
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6"> 
-					<h3><span> Новинки </span></h3>
-
-					<div class="row">
-						<div class="col-md-12 col-sm-12"> 
-							<div class="sale-item"> 
-								<img src="img/Ball-gown-150x150.jpg" width="100" /> 
-								<p> Dress promo black </p> 
-							</div>
-							<div class="sale-item"> 
-								<img src="img/best-new-150x150.jpg" width="100" /> 
-								<p> Dress black </p> 
-							</div>
-							<div class="sale-item"> 
-								<img src="img/Black-Long-150x150.jpg" width="100" /> 
-								<p> Dress black </p> 
-							</div>
-							<div class="sale-item"> 
-								<img src="img/Black-Long-Prom-150x150.jpg" width="100" /> 
-								<p> Dress black </p> 
-							</div>
-							<div class="sale-item"> 
-								<img src="img/black-prom-dresses-with-sleeves-150x150.jpg" width="100" /> 
-								<p> Dress black </p> 
-							</div>
-							<div class="sale-item"> 
-								<img src="img/red-prom-dresses.jpg" width="100" /> 
-								<p> Dress black </p> 
-							</div>
-							<div class="sale-item"> 
-								<img src="img/Ball-gown-150x150.jpg" width="100" /> 
-								<p> Dress black </p> 
-							</div>
-						</div> 
-
-					</div>
+					<a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
 				</div>
 			</div>
 			<div class="footer">

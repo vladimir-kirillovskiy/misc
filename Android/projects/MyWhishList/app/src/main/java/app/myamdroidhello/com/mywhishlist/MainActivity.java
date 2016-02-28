@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
     private void saveToDB(){
         MyWish wish = new MyWish();
         wish.setTitle(title.getText().toString().trim());
-        wish.setTitle(content.getText().toString().trim());
+        wish.setContent(content.getText().toString().trim());
 
         dba.addWishes(wish);
         dba.close();

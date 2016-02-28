@@ -5,6 +5,10 @@ body {
 	margin-top: 10px;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .float-right {
   float: right;
 }
@@ -204,4 +208,25 @@ body {
     font-size: 1.5em;
     padding: 0 0.25em;
     background: white;
+}
+
+
+/* Carousel */
+
+.carousel-main {
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-main > .carousel-inner {
+  /*padding-left: 11%;*/
+}
+
+.carousel-inner > .item > .slide-item > img {
+  width: 300px;
+  height: 500px;
+}
+
+.slide-item {
+  float: left;
 }

@@ -5,7 +5,7 @@ package data;
  */
 public class Constants {
     public static final String DATABASE_NAME = "wishdb";
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 4;
     public static final String TABLE_NAME = "wishes";
     public static final String TITLE_NAME = "title";
     public static final String CONTENT_NAME = "content";

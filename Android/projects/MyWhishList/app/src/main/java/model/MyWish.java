@@ -7,6 +7,7 @@ public class MyWish {
     public String title, content, recorddate;
     public int itemId;
 
+
     public int getItemId() {
         return itemId;
     }
