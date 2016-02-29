@@ -230,3 +230,9 @@ body {
 .slide-item {
   float: left;
 }
+
+
+.slide-item-first {
+  width: 140px;
+  height: 500px;
+}
