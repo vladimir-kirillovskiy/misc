@@ -1,6 +1,10 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 }
+
+.text-center {
+  text-align: center;
+}
 .margin-top-10 {
 	margin-top: 10px;
 }
@@ -184,7 +188,7 @@ body {
 }
 
 .footer {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 100%;
   height: 80px;
   /*background-image: url('../img/logo_trans_120.png');
@@ -207,9 +211,25 @@ body {
     top: -2.7em;
     font-size: 1.5em;
     padding: 0 0.25em;
-    background: white;
+    background: #fff;
 }
 
+.motto {
+  margin-right: 50px;
+  font-size: 40px;
+  font-style: italic;
+  /*font-family: 'Lobster', cursive;*/
+  font-family: 'Marck Script', cursive;
+}
+
+.motto > div {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.motto-center {
+  margin-bottom: 50px !important;
+}
 
 /* Carousel */
 
@@ -233,6 +253,6 @@ body {
 
 
 .slide-item-first {
-  width: 140px;
+  width: 120px;
   height: 500px;
 }
