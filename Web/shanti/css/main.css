@@ -2,6 +2,12 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+h1.main-header-1 {
+  margin-top: 0px;
+  margin-left: 20px;
+  font-size: 28px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -19,6 +25,13 @@ body {
 
 .float-clear {
    clear: both;
+}
+
+.text-block {
+  padding: 10px;
+  background-color: #efefef;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
 .logo-bar {
@@ -85,7 +98,7 @@ body {
 }
 
 .main-area {
-	margin-top: 10px;
+	margin-top: 30px;
 }
 
 .main-area .gallery {
@@ -234,7 +247,7 @@ body {
 /* Carousel */
 
 .carousel-main {
-  margin-top:30px;
+  /*margin-top:30px;*/
   width: 100%;
   height: 500px;
 }
@@ -266,17 +279,33 @@ body {
 /* about page*/
 
 .about-main {
-  margin-top: 10px;
-  padding: 20px;
+  padding-left: 20px;
 }
 
 .about-img img{
   border-radius: 10px;
 }
 
+
 .about-text {
-  padding: 10px;
-  background-color: #efefef;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+}
+
+/* Contacts page */
+
+.contacts-main {
+  width: 400px;
+  font-size: 18px;
+}
+
+.contact-line {
+  margin: 5px;
+  font-style: italic;
+}
+
+.contact-line > span {
+  font-size: 30px;
+  vertical-align: middle;
+  margin-right: 15px;
+  width: 32px;
+  height: 32px;
 }
