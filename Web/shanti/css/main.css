@@ -8,6 +8,10 @@ h1.main-header-1 {
   font-size: 28px;
 }
 
+.no-padding {
+  padding: 0;
+}
+
 .text-center {
   text-align: center;
 }
@@ -55,6 +59,7 @@ h1.main-header-1 {
 .logo-bar .logo-info {
 	position: absolute;
 	bottom: 0;
+  margin: 0;
 	left: 0;
 	width: 100%;
 	font-size: 15px;
@@ -68,7 +73,7 @@ h1.main-header-1 {
   text-transform: uppercase;
 }
 
-.nav .row {
+.nav .nav-list {
 	border-top: 1px solid #555;
 	border-bottom: 1px solid #555;
 	padding-top: 5px;
@@ -80,7 +85,18 @@ h1.main-header-1 {
 
 .nav .basket-link {
   position: absolute;
-  right: 20px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #555;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.nav .basket-link span {
+  vertical-align: middle;
+  color: #fff;
 }
 
 .menu-divider {
