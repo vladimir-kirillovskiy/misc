@@ -180,10 +180,10 @@ h1.main-header-1 {
 */
 .sale-item {
 	display: inline-block;
-	margin: 0 5px 10px 5px;
+	margin: 0 10px 20px 10px;
   padding: 5px;
-  width: 120px;
-  height: 180px;
+  width: 200px;
+  height: 270px;
   border-radius: 5px;
 	vertical-align: top;
   border: 1px solid #ccc;
@@ -192,10 +192,13 @@ h1.main-header-1 {
 
 .sale-item img {
 	margin-bottom: 5px;
+  border-radius: 2px;
+  width: 180px;
+  height: 220px;
 }
 
 .sale-item p {
-	max-width: 100px;
+	max-width: 180px;
 	text-align: center;
   font-size: 12px;
 }
