@@ -8,6 +8,14 @@ h1.main-header-1 {
   font-size: 28px;
 }
 
+.min-width-500 {
+  min-width: 500px;
+}
+
+.max-width-1000 {
+  max-width: 1000px;
+}
+
 .no-padding {
   padding: 0;
 }
@@ -108,23 +116,6 @@ h1.main-header-1 {
 }
 
 
-.jumbotron {
-  background-image:url('../img/grad.jpg');
-  height: 180px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.jumbotron h2 {
-  color: #fff;
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
-  font-style: italic;
-}
-
 .main-area {
 	margin-top: 30px;
 }
@@ -136,65 +127,8 @@ h1.main-header-1 {
 	margin: 10px;
 }
 
-.main-area .col-md-6 h3 {
-  border-bottom: 1px solid #666;
-  position: relative;
-  margin-bottom: 30px;
-  margin-left: 35px;
-  margin-right: 40px;
-}
 
-.main-area .col-md-6 h3:after {
-  /*content: url('../img/right.png');*/
-  content: '\2767';
-  color: #555;
-  float: right;
-  margin-top: -12px;
-  margin-right: -16px;
-}
-.main-area .col-md-6 h3:before {
-  content: '\2619';
-  color: #555;
-  float: left;
-  margin-top: -12px;
-  margin-left: -16px;
-}
-
-.main-area .col-md-6 h3 span {
-  position: absolute;
-  background: #fff;
-  padding: 0 5px;
-  bottom: -13px;
-  font-size: 22px;
-  line-height: 26px;
-  margin-left: 30px;
-}
-
-.sale-item {
-	display: inline-block;
-	margin: 0 10px 20px 10px;
-  padding: 5px;
-  width: 240px;
-  height: 340px;
-  border-radius: 5px;
-	vertical-align: top;
-  border: 1px solid #ccc;
-  text-align: center;
-}
-
-.sale-item img {
-	margin-bottom: 10px;
-  border-radius: 2px;
-  max-width: 220px;
-  max-height: 270px;
-}
-
-.sale-item p {
-	max-width: 240px;
-	text-align: center;
-  font-size: 12px;
-}
-
+/* footer */
 .footer {
   margin-top: 60px;
   width: 100%;
@@ -239,8 +173,8 @@ h1.main-header-1 {
   margin-bottom: 50px !important;
 }
 
-/* Carousel */
 
+/* Carousel */
 .carousel-main {
   /*margin-top:30px;*/
   width: 100%;
@@ -272,7 +206,6 @@ h1.main-header-1 {
 
 
 /* about page*/
-
 .about-main {
   padding-left: 20px;
 }
@@ -286,7 +219,6 @@ h1.main-header-1 {
 }
 
 /* Contacts page */
-
 .contacts-main {
   width: 400px;
   font-size: 18px;
@@ -303,4 +235,51 @@ h1.main-header-1 {
   margin-right: 15px;
   width: 32px;
   height: 32px;
+}
+
+/* on catalog page */
+.sale-item {
+  display: inline-block;
+  margin: 0 10px 20px 10px;
+  padding: 5px;
+  width: 240px;
+  height: 340px;
+  border-radius: 5px;
+  vertical-align: top;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.sale-item img {
+  margin-bottom: 10px;
+  border-radius: 2px;
+  max-width: 220px;
+  max-height: 270px;
+}
+
+.sale-item p {
+  max-width: 240px;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+/* dress page */
+
+.big-pics img{
+  width: 450px;
+  border-radius: 5px;
+}
+
+.price-button {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }

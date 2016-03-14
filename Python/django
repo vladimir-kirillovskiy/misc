@@ -1,0 +1,46 @@
+// https://www.youtube.com/watch?v=zTNA0MtZwso  - 10 apps
+// https://docs.djangoproject.com/en/1.9/intro/tutorial01/
+
+pacman -S python-django
+
+// create project 
+django-admin startproject mysite
+// run server
+cd mysite
+python manage.py runserver
+
+// to change port or IP
+python manage.py runserver 8080
+// or
+python manage.py runserver 0.0.0.0:8000
+
+// create poll
+python manage.py startapp polls
+cd polls
+
+//create first view in views.py
+	from django.http import HttpResponse
+
+	def index(request):
+		return HttpResponse("Hello, world. You're at the polls index")
+
+
+
+// create url mapper inside polls urls.py
+
+	from django.conf.urls import url
+	from . import views
+
+	urlpatterns = [
+	    url(r'^$', views.index, name='index'),
+	]
+
+// create urls.py in mysite/mysite
+	from django.conf.urls import include, url
+	from django.contrib import admin
+
+	urlpatterns = [
+	    url(r'^polls/', include('polls.urls')),
+	    url(r'^admin/', admin.site.urls),
+	]
+
