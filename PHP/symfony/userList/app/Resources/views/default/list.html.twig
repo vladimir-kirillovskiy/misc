@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Пользователи </h1>
+    <div class="wrapper">
+        <div class="list-form">
+            <table class="table tablesorter">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>ФИО</th>
+                        <th>Email</th>
+                        <th>Дата Рождения</th>
+                        <th>Пол</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.lastName}} {{user.firstName}} {{user.patronym}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.dob| date('Y-m-d')}}</td>
+                            <td>{{user.gender ? 'Мужской':'Женский'}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="pages">
+                {% for i in 1..pages  %}
+                     <a href="/list/{{ i }}"> {{i}} </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset ('css/blue/style.css') }}">
+<style>
+    .pages {
+        text-align:center;
+    }
+</style>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset ('js/jquery-1.12.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset ('js/jquery.tablesorter.min.js') }}"></script>
+    <script>
+        $(".tablesorter").tablesorter(); 
+    </script>
+{% endblock %}

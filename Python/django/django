@@ -18,6 +18,15 @@ python manage.py runserver 0.0.0.0:8000
 python manage.py startapp polls
 cd polls
 
+// create a migration // like git?
+// don't forget to add polls onto Installed apps in settings.py
+python manage.py makemigrations polls
+python manage.py migrate
+
+
+// Django shell
+python manage.py shell
+
 //create first view in views.py
 	from django.http import HttpResponse
 
