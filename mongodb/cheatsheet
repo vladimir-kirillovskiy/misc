@@ -1,0 +1,80 @@
+pacman -S mongodb
+systemctl start mongodb.service
+
+// open mongo shell (js interpriter)
+mongo
+
+// show all databases
+show dbs
+// switch to db test if exists
+// if not - create and use it
+use test
+
+// show all collections (tables)
+show collections
+
+// show all documents in collection
+db.collectionName.find()
+
+// display all documents in more readable format
+db.collectionName.find().pretty()
+
+// create collection
+db.createCollection("cars")
+
+// insert document
+// it will be converted into BSON
+db.cars.insert({
+	name:"honda",
+	make:'accord',	// can be single or double quote
+	"year":"2010"	// can have quotes around key 
+});					// can have semi-collon at the end
+
+// update document
+db.cars.update(
+	{name:"honda"},
+	{$set: {name:"ford"}}
+);
+
+// add field to document
+db.cars.update(
+	{name:"ford"},
+	{$set: {transmission:"automatic"}},
+	{$upsert:true}
+);
+
+// remove all documents
+db.cars.remove({})
+
+// remove one document
+db.cars.remove({name:"ford"})
+
+
+// data types
+db.student.insert({
+    name: 'Joe',		// string
+    undergrad: true,	// bool
+    units: 9,			// number
+    classes: ['geography', 'math', 'journalism']		//array
+})
+
+// search documents 
+
+// find specific document
+db.student.find({name:"Rachel"})		// value case sensitive
+// find where value greater than 6
+db.student.find({units:{$gt:6}}).pretty()
+// less than		
+db.student.find({units:{$lt:6}}).pretty()	
+// where IN()	
+db.student.find({classes:{$in:['history', 'geography']}}).pretty()
+
+// sorting docs
+
+db.student.find({classes:{$in:['history', 'geography']}}).sort({units:1}).pretty() // ascending sort by units		
+db.student.find({classes:{$in:['history', 'geography']}}).sort({units:-1}).pretty() // descending sort by units		
+
+db.student.find({}).sort({name:1}) 	// strings sorted in descending order
+db.student.find({}).sort({name:1}).limit(2)
+
+

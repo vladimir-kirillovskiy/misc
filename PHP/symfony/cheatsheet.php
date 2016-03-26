@@ -28,3 +28,16 @@ Controls the logic of the template; it is used for example to execute for loops 
 Allows including comments inside templates. Contrary to HTML comments, they aren't included in the rendered template.
 
 */
+
+
+// Doctrine 
+// http://symfony.com/doc/current/book/doctrine.html
+
+// create DB
+// php bin/console doctrine:database:create
+
+// php bin/console doctrine:database:drop --force
+// php bin/console doctrine:database:create
+
+// generate entity
+// php bin/console doctrine:generate:entity
