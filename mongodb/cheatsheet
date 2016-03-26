@@ -69,6 +69,9 @@ db.student.find({units:{$lt:6}}).pretty()
 // where IN()	
 db.student.find({classes:{$in:['history', 'geography']}}).pretty()
 
+// can use where clause
+db.student.find({$where: "this.units <=6 && this.units >=3"}).pretty()
+
 // sorting docs
 
 db.student.find({classes:{$in:['history', 'geography']}}).sort({units:1}).pretty() // ascending sort by units		
