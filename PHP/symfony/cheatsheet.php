@@ -41,3 +41,14 @@ Allows including comments inside templates. Contrary to HTML comments, they aren
 
 // generate entity
 // php bin/console doctrine:generate:entity
+
+// update db schema 
+// php bin/console doctrine:schema:update --force
+
+
+// generate intity from existing database
+// php bin/console doctrine:mapping:import --force AcmeBlogBundle xml
+
+
+// php bin/console doctrine:mapping:convert annotation ./src
+// php bin/console doctrine:generate:entities AcmeBlogBundle
