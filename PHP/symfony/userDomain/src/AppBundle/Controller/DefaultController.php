@@ -20,12 +20,18 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:Users');
 
 
-        // get a total count of users
+        // get a total count of distinct domain names
 
-        $count = $rep->createQueryBuilder('u')
-            ->select('count(u.id)')
-            ->getQuery()
-            ->getSingleScalarResult();
+        $countsql = "
+            SELECT 
+                COUNT(DISTINCT RIGHT(email, LENGTH(email)-INSTR(email, '@')))
+            FROM 
+                users
+        ";
+
+        $conn = $this->get('database_connection');
+        $count = $conn->fetchColumn($countsql);     // select domains and count of the users
+            
 
         $pages = floor($count / $records_per_page);    
         $pages = ($pages < 1) ? 1:$pages;
@@ -45,7 +51,6 @@ class DefaultController extends Controller
             COUNT(name) DESC
         LIMIT " . $offset . ", " . $limit;
 
-        $conn = $this->get('database_connection');
         $domains = $conn->fetchAll($sql);     // select domains and count of the users
 
         // render view page
