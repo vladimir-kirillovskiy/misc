@@ -155,3 +155,15 @@ echo ${fruit/c*/durian}			# will replace all instances start with "c" with duria
 # Colours
 
 echo -e '\033[34;42mColor Text\033[0m' 		# -e enable escape sequences, m - end of escape sequence, 34;42 - forgraund;background colors
+
+
+# data manipulation 
+
+#get line number 
+awk '/line_to _look/{ print NR; exit }' file_name
+
+# print 2nd line
+sed -n '2p' < file.txt
+
+# split on line number - will output files with 5 lines or less
+split -l 5 file_name
