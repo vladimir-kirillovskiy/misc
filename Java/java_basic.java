@@ -63,3 +63,39 @@ sb.append("World");
 
 System.out.println(sb.toString());
 
+// wildcards
+
+ArrayList<?> list;  // <?> - wildcard, is type is not known
+ArrayList<? extends Machine> list;  // can get Machine type values  
+ArrayList<? Super Camera> list;  // camera or super class of camera  
+
+// anonymous classes
+class Machine {
+	public void start(){
+		System.out.println("starting ...");
+	}
+}
+
+public class App {
+	public static void main(String[] args) {
+		Machine machine1 = new Machine() {		// that is annonimous class that it is a sub class of Machine
+			@Override
+			System.out.println("override");
+		};
+	}
+}
+
+// reading text file
+
+public static void main(String[] args) throws FileNotFoundException {	// error handling
+	String fileName = "C:/Users/Vladk/file.txt";	// can put into working directory
+	File textFile = new File(fileName);
+
+	Scanner in = new Scanner(textFile);		// can put as try/cache or use throws FileNotFoundException
+	while(in.hasNextLine()) {
+		String line = in.nextLine();
+	}
+
+	in.close();	// close this file
+}
+
