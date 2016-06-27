@@ -98,4 +98,31 @@ public static void main(String[] args) throws FileNotFoundException {	// error h
 
 	in.close();	// close this file
 }
+ 
+// reading using filereader 
+File file = new File("text.txt");
+FileReader fr = new FileReader(file);		// use try/cache
+BufferReader dr = new BufferReader(fr);
+String line = br.readLine();
 
+// try with resourses
+// and write into file
+File file = new File("text.txt");  // will create in project folder
+try (BufferWriter br = new BufferWriter(new FileWriter(file))) {
+	br.write("Line one");
+	br.newLine();
+	br.write("Line two");
+	br.newLine();
+	br.write("Line last");
+
+	// don't need br.close()
+
+} cache (IOException e) {
+	System.out.println("Unable to write file " + file.toString());
+}
+
+// .equals works better than == 
+
+// Enums
+
+// recursion
