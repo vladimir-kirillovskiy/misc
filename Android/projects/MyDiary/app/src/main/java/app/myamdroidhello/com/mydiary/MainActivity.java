@@ -2,12 +2,12 @@ package app.myamdroidhello.com.mydiary;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -32,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!enterText.getText().toString().equals("")) {
-                    String data = enterText.getText().toString();
-                    writeToFile(data);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter text", Toast.LENGTH_SHORT).show();
-                }
+                String baseDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath();
+                Log.e("dir", baseDir);
+//                if (!enterText.getText().toString().equals("")) {
+//                    String data = enterText.getText().toString();
+//                    writeToFile(data);
+//                } else {
+//                    Toast.makeText(getApplicationContext(), "Please enter text", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
@@ -48,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void writeToFile(String myData) {
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput("diary.txt", Context.MODE_PRIVATE));
+            String baseDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath();
+
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput(baseDir + "/" + "diary.txt", Context.MODE_PRIVATE));
             outputStreamWriter.write(myData);
             outputStreamWriter.close();     // always close your streams
         } catch (IOException e) {
@@ -60,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
         String result = "";
 
         try {
-            InputStream inputStream = openFileInput("diary.txt");
+            String baseDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).getAbsolutePath();
+
+            InputStream inputStream = openFileInput(baseDir + "/" + "diary.txt");
             if (inputStream != null) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
