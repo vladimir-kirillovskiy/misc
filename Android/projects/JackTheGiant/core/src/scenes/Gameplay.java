@@ -16,6 +16,7 @@ import com.mygdx.game.GameMain;
 
 import clouds.CloudsController;
 import helpers.GameInfo;
+import huds.UIHud;
 import player.Player;
 
 /**
@@ -35,6 +36,8 @@ public class Gameplay implements Screen {
 
     private Sprite[] bgs;       // as there are more that 1 bg needed to scroll down
     private float lastYPosition;
+
+    private UIHud hud;
 
     private CloudsController cloudsController;
 
@@ -60,6 +63,8 @@ public class Gameplay implements Screen {
 
         debugRenderer = new Box2DDebugRenderer();
 
+        hud = new UIHud(game);
+
         world = new World(new Vector2(0, -9.8f), true); // (gravity, allow sleep)
 
         cloudsController = new CloudsController(world);
@@ -74,12 +79,14 @@ public class Gameplay implements Screen {
             player.movePlayer(-2);      // move to left negative value
         } else if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             player.movePlayer(2);       // move to right positive value
+        } else {
+            player.setWalking(false);
         }
     }
 
     void update(float dt){
         handleInput(dt);
-//        moveCamera();
+        moveCamera();
         checkBackgroundsOutOfBounds();
         cloudsController.setCameraY(mainCamera.position.y);
         cloudsController.createAndArrangeNewClouds();
@@ -132,7 +139,9 @@ public class Gameplay implements Screen {
         drawBackgrounds();
 
         cloudsController.drawClouds(game.getBatch());
-        player.drawPlayer(game.getBatch());
+        player.drawPlayerIdle(game.getBatch());
+        player.drawPlayerAnimation(game.getBatch());
+
         game.getBatch().end();
 
 
@@ -141,6 +150,9 @@ public class Gameplay implements Screen {
         game.getBatch().setProjectionMatrix(mainCamera.combined);
         mainCamera.update();
 
+        game.getBatch().setProjectionMatrix(hud.getStage().getCamera().combined);
+        hud.getStage().draw();
+
         player.updatePlayer();
         world.step(Gdx.graphics.getDeltaTime(), 6, 2);
 
@@ -148,7 +160,7 @@ public class Gameplay implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        gameViewport.update(width, height);
     }
 
     @Override
@@ -168,6 +180,11 @@ public class Gameplay implements Screen {
 
     @Override
     public void dispose() {
-
+        world.dispose();
+        for (int i = 0; i < bgs.length; i++) {
+            bgs[i].getTexture().dispose();
+        }
+        player.getTexture().dispose();
+        debugRenderer.dispose();
     }
 }
