@@ -19,6 +19,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.GameMain;
 
 import helpers.GameInfo;
+import helpers.GameManager;
 import scenes.MainMenu;
 
 /**
@@ -63,8 +64,10 @@ public class HighscoreButtons {
         BitmapFont coinFont = generator.generateFont(parameter);
 
         // create lable with a font as a parameter
-        scoreLabel = new Label("100", new Label.LabelStyle(scoreFont, Color.WHITE));
-        coinLabel = new Label("100", new Label.LabelStyle(coinFont, Color.WHITE));
+        scoreLabel = new Label(String.valueOf(GameManager.getInstance().gameData.getHighScore()),
+                new Label.LabelStyle(scoreFont, Color.WHITE));
+        coinLabel = new Label(String.valueOf(GameManager.getInstance().gameData.getCoinHighScore()),
+                new Label.LabelStyle(coinFont, Color.WHITE));
 
 
         // set position

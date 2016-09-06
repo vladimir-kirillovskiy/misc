@@ -30,6 +30,7 @@ public class Player extends Sprite {
     private float elapsedTime;
 
     private boolean isWalking;
+    private boolean dead;
 
 
     public Player(World world, float x, float y) {
@@ -40,7 +41,7 @@ public class Player extends Sprite {
         createBody();
 
         playerAtlas = new TextureAtlas("Player Animation/Player Animation.atlas");
-
+        dead = false;
     }
 
     void createBody() {     // by default private
@@ -60,8 +61,11 @@ public class Player extends Sprite {
         fixtureDef.friction = 2f;       // prevent sliding
         fixtureDef.shape = shape;
 
-        Fixture fixture = body.createFixture(fixtureDef);
+        fixtureDef.filter.categoryBits = GameInfo.PLAYER;
+        fixtureDef.filter.maskBits = GameInfo.DEFAULT | GameInfo.COLLECTABLE;       // define what category this game object can collide with
 
+        Fixture fixture = body.createFixture(fixtureDef);
+        fixture.setUserData("Player");
         shape.dispose();
 
 
@@ -105,11 +109,25 @@ public class Player extends Sprite {
     }
 
     public void updatePlayer() {
-        setPosition(body.getPosition().x * GameInfo.PPM, body.getPosition().y * GameInfo.PPM);
+
+        if(body.getLinearVelocity().x > 0) {
+            //going right
+            setPosition((body.getPosition().x - 0.3f) * GameInfo.PPM, body.getPosition().y * GameInfo.PPM);
+        } else if(body.getLinearVelocity().x < 0) {
+            // going left
+            setPosition((body.getPosition().x - 0.5f) * GameInfo.PPM, body.getPosition().y * GameInfo.PPM);
+        }
     }
 
     public void setWalking(boolean isWalking) {
         this.isWalking = isWalking;
     }
 
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
 }
