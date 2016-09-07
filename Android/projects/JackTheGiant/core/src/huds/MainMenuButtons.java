@@ -108,7 +108,7 @@ public class MainMenuButtons {
         quitBtn.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                System.out.println("quit btn");
+                Gdx.app.exit()
             }
         });
 
