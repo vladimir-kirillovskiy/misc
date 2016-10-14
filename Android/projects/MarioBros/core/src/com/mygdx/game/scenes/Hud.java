@@ -18,11 +18,14 @@ import com.mygdx.game.MarioBros;
 public class Hud implements Disposable {
     public Stage stage;
     private Viewport viewport;
-    private int worldTimer, score;
+    private int worldTimer;
+    private static int score; // bad practice
     private float timeCount;
 
-    Label countdownLabel, scoreLabel, timeLabel,
+    private Label countdownLabel, timeLabel,
             levelLabel, worldLabel, marioLabel;
+    private static Label scoreLabel;
+
 
     public Hud(SpriteBatch sb) {
         worldTimer = 300;
@@ -53,6 +56,20 @@ public class Hud implements Disposable {
 
         stage.addActor(table);
 }
+
+    public void update(float dt) {
+        timeCount += dt;
+        if (timeCount >= 1) {
+            worldTimer--;
+            countdownLabel.setText(String.format("%03d", worldTimer));
+            timeCount = 0;
+        }
+    }
+    // bad tractive to set it as static
+    public static void addScore(int value) {
+        score += value;
+        scoreLabel.setText(String.format("%06d", score));
+    }
 
     @Override
     public void dispose() {

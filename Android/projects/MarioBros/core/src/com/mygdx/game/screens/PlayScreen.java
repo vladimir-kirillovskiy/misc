@@ -3,6 +3,7 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -16,8 +17,10 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.MarioBros;
 import com.mygdx.game.scenes.Hud;
+import com.mygdx.game.sprites.Enemy;
 import com.mygdx.game.sprites.Mario;
 import com.mygdx.game.tools.B2WorldCreator;
+import com.mygdx.game.tools.WorldContactListener;
 
 /**
  * Created by Vladk on 11/10/2016.
@@ -38,10 +41,11 @@ public class PlayScreen implements Screen {
 
     private World world;
     private Box2DDebugRenderer b2dr;
+    private B2WorldCreator creator;
 
     private Mario player;
 
-
+    private Music music;
 
     public PlayScreen(MarioBros game) {
         this.game = game;
@@ -61,9 +65,17 @@ public class PlayScreen implements Screen {
         world = new World(new Vector2(0, -9.8f), true);
         b2dr = new Box2DDebugRenderer();
 
-        new B2WorldCreator(world, map);
+        creator =new B2WorldCreator(this);
 
-        player = new Mario(world, this);
+        player = new Mario(this);
+
+        world.setContactListener(new WorldContactListener());
+
+        music = MarioBros.manager.get("audio/music/mario_music.ogg", Music.class);
+        music.setLooping(true);
+        music.setVolume(0.1f);
+        music.play();
+
     }
 
     public TextureAtlas getAtlas() {
@@ -89,6 +101,14 @@ public class PlayScreen implements Screen {
         handleInput(dt);
         world.step(1/60f, 6, 2);
         player.update(dt);
+        for(Enemy enemy : creator.getGoombas()) {
+            enemy.update(dt);
+            // wake up enemies
+            if (enemy.getX() < player.getX() + 224 / MarioBros.PPM) {
+                enemy.b2body.setActive(true);
+            }
+        }
+        hud.update(dt);
         gameCam.position.x = player.b2body.getPosition().x;
         gameCam.update();
 
@@ -111,6 +131,9 @@ public class PlayScreen implements Screen {
         game.batch.setProjectionMatrix(gameCam.combined);
         game.batch.begin();
         player.draw(game.batch);
+        for(Enemy enemy : creator.getGoombas()) {
+            enemy.draw(game.batch);
+        }
         game.batch.end();
 
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
@@ -121,6 +144,14 @@ public class PlayScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         gamePort.update(width, height);
+    }
+
+    public TiledMap getMap() {
+        return map;
+    }
+
+    public World getWorld() {
+        return world;
     }
 
     @Override

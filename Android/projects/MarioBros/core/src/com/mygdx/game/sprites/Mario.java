@@ -3,9 +3,11 @@ package com.mygdx.game.sprites;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
+import com.badlogic.gdx.physics.box2d.EdgeShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
@@ -25,9 +27,9 @@ public class Mario extends Sprite {
     private boolean runningRight;
     private float stateTimer;
 
-    public Mario(World world, PlayScreen screen) {
+    public Mario(PlayScreen screen) {
         super(screen.getAtlas().findRegion("little_mario"));
-        this.world = world;
+        this.world = screen.getWorld();
         defineMario();
 
         currentState = State.STANDING;
@@ -114,8 +116,18 @@ public class Mario extends Sprite {
         CircleShape shape = new CircleShape();
         shape.setRadius(6 / MarioBros.PPM);
 
+        fixtureDef.filter.categoryBits = MarioBros.MARIO_BIT;
+        fixtureDef.filter.maskBits = MarioBros.GROUND_BIT | MarioBros.COIN_BIT |
+                MarioBros.BRICK_BIT | MarioBros.ENEMY_BIT | MarioBros.OBJECT_BIT | MarioBros.ENEMY_HEAD_BIT;
+
         fixtureDef.shape = shape;
         b2body.createFixture(fixtureDef);
 
+        // make a sensor for mario head to trigger contact with it
+        EdgeShape head = new EdgeShape();
+        head.set(new Vector2(-2 / MarioBros.PPM, 6 / MarioBros.PPM), new Vector2(2 / MarioBros.PPM, 6 / MarioBros.PPM));
+        fixtureDef.shape = head;
+        fixtureDef.isSensor = true; // doesn't collide
+        b2body.createFixture(fixtureDef).setUserData("head");
     }
 }

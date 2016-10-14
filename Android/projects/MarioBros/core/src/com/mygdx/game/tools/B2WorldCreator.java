@@ -9,15 +9,23 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 import com.mygdx.game.MarioBros;
+import com.mygdx.game.screens.PlayScreen;
 import com.mygdx.game.sprites.Brick;
 import com.mygdx.game.sprites.Coin;
+import com.mygdx.game.sprites.Goomba;
 
 /**
  * Created by Vladk on 11/10/2016.
  */
 public class B2WorldCreator {
-    public B2WorldCreator(World world, TiledMap map) {
+    private Array<Goomba> goombas;
+
+    public B2WorldCreator(PlayScreen screen) {
+
+        World world = screen.getWorld();
+        TiledMap map = screen.getMap();
 
         BodyDef bodyDef = new BodyDef();
         PolygonShape shape = new PolygonShape();
@@ -47,6 +55,8 @@ public class B2WorldCreator {
 
             shape.setAsBox((rect.getWidth() / 2) / MarioBros.PPM, (rect.getHeight() / 2) / MarioBros.PPM);
             fixtureDef.shape = shape;
+            fixtureDef.filter.categoryBits = MarioBros.OBJECT_BIT;
+
             body.createFixture(fixtureDef);
         }
 
@@ -54,16 +64,28 @@ public class B2WorldCreator {
         for (MapObject object : map.getLayers().get(5).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
-           new Brick(world, map, rect);
+           new Brick(screen, rect);
         }
 
         // create coin bodies/fixtures
         for (MapObject object : map.getLayers().get(4).getObjects().getByType(RectangleMapObject.class)) {
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
-           new Coin(world, map, rect);
+           new Coin(screen, rect);
+        }
+
+        // create coin bodies/fixtures
+        goombas = new Array<Goomba>();
+
+        for (MapObject object : map.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)) {
+            Rectangle rect = ((RectangleMapObject) object).getRectangle();
+            goombas.add(new Goomba(screen, rect.getX() / MarioBros.PPM, rect.getY() / MarioBros.PPM));
         }
 
 
+    }
+
+    public Array<Goomba> getGoombas() {
+        return goombas;
     }
 }
