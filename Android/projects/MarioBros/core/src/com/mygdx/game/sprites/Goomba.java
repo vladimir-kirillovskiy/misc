@@ -1,5 +1,6 @@
 package com.mygdx.game.sprites;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -15,7 +16,7 @@ import com.mygdx.game.screens.PlayScreen;
 /**
  * Created by Vladk on 10/13/2016.
  */
-public class Goomba extends Enemy {
+public class Goomba extends com.mygdx.game.sprites.Enemy {
 
     private float stateTime;
     private Animation walkAnimation;
@@ -87,6 +88,14 @@ public class Goomba extends Enemy {
         b2body.createFixture(fixtureDef).setUserData(this);
     }
 
+    public void onEnemyHit(Enemy enemy){
+        if(enemy instanceof Turtle && (((Turtle) enemy).currentState == Turtle.State.MOVING_SHELL)) {
+            setToDestroy = true;
+        } else {
+            reverseVelocity(true, false);
+        }
+    }
+
     @Override
     public void draw(Batch batch) {
         // remove stomped goomba after 1 sec
@@ -96,7 +105,8 @@ public class Goomba extends Enemy {
     }
 
     @Override
-    public void hitOnHead() {
+    public void hitOnHead(Mario mario) {
         setToDestroy = true;
+        MarioBros.manager.get("audio/sounds/stomp.wav", Sound.class).play();
     }
 }

@@ -28,7 +28,8 @@ public abstract class Enemy extends Sprite {
 
     protected abstract void defineEnemy();
     public abstract void update(float delta);
-    public abstract void hitOnHead();
+    public abstract void hitOnHead(Mario mario);
+    public abstract void onEnemyHit(Enemy enemy);
 
     public void reverseVelocity(boolean x, boolean y) {
         if (x) {
@@ -39,4 +40,5 @@ public abstract class Enemy extends Sprite {
         }
 
     }
+
 }
