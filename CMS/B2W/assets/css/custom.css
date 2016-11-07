@@ -1,0 +1,432 @@
+/*  COlOUR REFS
+
+Green: #79b044;
+Salmon: #dd5638;
+Blue Gray: #3e4249;
+
+*/
+
+/* General */
+
+body {
+	margin-top: 50px;
+	font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
+	font-size: 16px;
+	background: url(../img/tile.jpg) top left repeat;
+}
+
+/* global */
+
+h1,h2,h3,h4,h5,h6 {
+	/* "sexy text" */
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	/* end */
+	font-weight: bold;
+}
+
+
+h1 {
+	font-size: 3em;
+}
+
+h1, h2 {
+	margin: 0 0 40px;
+}
+
+h3 {
+	margin: 20px 0; 
+}
+
+h4 {
+	font-size: 18px;
+}
+
+p {
+	margin: 0 0 15px;
+}
+
+p.lead {
+	font-weight: normal;
+}
+
+a:link, a:visited {
+	color: #dd5638;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #c9302c;
+}
+
+button, input, .btn, a.btn {
+	/* "sexy text" */
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	/* end */
+	color: white;
+}
+
+.btn {
+	font-weight: bold;
+}
+
+
+button.btn:focus {
+	outline: none !important;
+}
+
+.btn-danger {
+	background-color: #dd5638;
+	border-collapse: #d95131; 
+}
+
+.btn-success {
+	background-color: #79b044;
+	border: none; 
+}
+
+.btn-success:hover {
+	background-color: #6a9b3d;
+	border-color: #6a9b3d;
+}
+
+img {
+	max-width: 100%;
+}
+
+.modal-content {
+	background: url("../img/tile.jpg") top left repeat;
+}
+
+.badge.social {
+	background: #ccc;
+	font-size: 24px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 42px;
+	margin: 0 5px 20px 0;
+	padding: 0;
+	-webkit-border-radius:50px;	
+	-moz-border-radius:50px;	
+	border-radius:50px;	
+	color: white;
+}
+
+.badge.social.twitter:hover {
+	background: #55acee;
+}
+.badge.social.facebook:hover {
+	background: #3b5998;
+}
+.badge.social.gplus:hover {
+	background: #db4b39;
+}
+
+blockquote {
+	padding: 0;
+	border: none;
+	font-style: italic;
+	text-align: left;
+}
+
+blockquote cite {
+	display: block;
+	color: #777;
+	margin: 15px 0 0 0;
+}
+
+blockquote:before {
+	display: none;
+}
+
+/* HERO */
+
+#hero {
+	background: url("../img/hero-bg.jpg") 50% 0 repeat fixed;
+	min-height: 500px;
+	padding: 40px 0;
+	color: white;
+	/* "sexy text" */
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	/* end */
+}
+
+#hero article {
+	width: 100%;
+	text-align: center;
+}
+
+#hero .hero-text {
+	margin-top: 30px;
+}
+
+#price-timeline {
+	margin: 30px 0 60px;
+	text-align: center;
+}
+
+#price-timeline .price {
+	display: inline-block;
+	margin: 0 2% 0 0;
+	width: 30%;
+	background: #3e4249;
+	padding: 10px 20px 30px;
+	position: relative;
+	vertical-align: top;
+}
+
+#price-timeline .price.active {
+	background: #dd5638;
+} 
+
+
+#price-timeline .price span {
+	/* make a black square */
+	background: #101010;
+	display: block;
+	height: 70px;
+	width: 70px;
+	/* position text in the center */
+	text-align: center;
+	line-height: 70px;
+
+	font-weight: bold;
+	font-size: 24px;
+	/* make it circle */
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	/* move it down for a half of the height of the circle */
+	position: absolute;
+	bottom: -35px;
+	left: 50%;
+	/* and move it half of the width */
+	margin-left: -35px;
+}
+
+#price-timeline h4 {
+	margin: 0 0 10px;
+}
+
+#price-timeline h4 small {
+	color: white;
+	font-weight: bold;
+	display: block;
+}
+
+
+/* layout */
+/* .row in the class row*/ 
+.row + .row {
+	margin-top: 20px;
+}
+
+section {
+	padding: 80px 0;
+}
+
+.section-header {
+	text-align: center;
+}
+
+section h2 {
+	margin: 20px 0 40px;
+}
+section h3 {
+	margin: 30px 0 10px;
+}
+
+#optin {
+	background: #3e4249;
+	padding: 20px 0;
+	color: white;
+	/* "sexy text" */
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	/* end */
+	font-size: 1.2em;
+}
+
+#optin p {
+	margin: 7px 0 0 0;
+}
+
+#who-benefits {
+	background: white;
+}
+
+
+#course-features {
+	background: #3e4249;
+	color: white;
+	text-align: center;
+}
+
+#project-features {
+	text-align: center;
+}
+
+#featurette {
+	background: url("../img/stuff-bg.jpg") 50% 100% repeat fixed;
+	background-size: cover;
+	text-align: center;
+	color: white;
+}
+
+#instructor {
+	background: white url("../img/brad-elvis.png") 90% -10px no-repeat;
+}
+
+#instructor h2 {
+	margin: 0 0 20px;
+}
+
+#instructor .num {
+	/* for verticale align */
+	display: table;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	line-height: 24px;
+	height: 140px;
+	width: 140px;
+	text-align: center;
+	background: #dd5638;
+	-webkit-border-radius:100%;
+	-moz-border-radius:100%;
+	border-radius:100%;
+	/* "sexy text" */
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	/* end */
+}
+
+/* trick to verticaly align content */
+#instructor .num .num-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#instructor .num span {
+	display: block;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#kudos {
+	text-align: center;
+}
+
+.testimonial {
+	margin-bottom: 60px;
+}
+
+.testimonial img {
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+
+
+#signup {
+	text-align: center;
+	background: url('../img/hipster-stuff.jpg') center center repeat fixed;
+	background-size: cover;
+	color: white;
+	padding: 140px 0;
+}
+
+#signup h2 {
+	font-weight: normal;
+}
+
+#signup h2 strong {
+	border-bottom: solid 2px #dd5638;
+}
+
+#signup .btn {
+	font-size: 24px;
+}
+
+footer {
+	background: #3e4249;
+	color: white;
+	padding: 20px 0 10px;
+	font-size: 12px;
+}
+
+footer p {
+	margin: 0;
+}
+
+footer a:link, footer a:visited {
+	color: white;
+}
+
+footer a:hover {
+	color: #dd5638;
+}
+
+footer li.signup-link a {
+	color: #dd5638;
+}
+footer li.signup-link a:hover {
+	font-weight: bold; 
+}
+
+
+
+/* custom icon sprite */
+
+i.ci {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background: url('../img/icon-sprite.png') no-repeat;
+}
+/* css sprite */
+.ci.ci-computer 	{background-position: 0 0;}
+.ci.ci-watch 		{background-position: -40px 0;}
+.ci.ci-calendar 	{background-position: -80px 0;}
+.ci.ci-community 	{background-position: -120px 0;}
+.ci.ci-instructor 	{background-position: -160px 0;}
+.ci.ci-device 		{background-position: -200px 0;}
+
+
+/* media queries */
+
+@media screen and (max-width: 991px) {
+	#instructor .container {
+		background: rgba(255, 255, 255, 0.8);
+		padding: 20px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.logo {
+		width: 50%;
+	}
+
+	#optin p {
+		margin: 0 0 10px;
+	}
+
+	#featurette iframe {
+		height: 240px;
+	}
+}
+
+@media screen and (max-width: 568px) {
+	#instructor .num {
+		height: 100px;
+		width: 100px;
+		font-size: 22px;
+	}
+
+	#instructor .num span {
+		font-size: 16px;
+	}
+}
