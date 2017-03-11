@@ -1,0 +1,75 @@
+install composer
+install laravel
+create new project 
+	composer create-project laravel/laravel project_name
+to run build in server 
+	php artisan serve
+
+views in - resources/views
+router - routes/web.php
+controllers in - app/http/controllers
+modals in app folder
+database tables plural, modals - singulars
+add controller:
+	php artisan make:controller UserController
+
+database/migrations
+php artisan migrate - add tables to the clean database;
+
+use App\User - backslash important
+
+authentication
+php artisan make:auth - create basic login and register feature
+
+accessors and mutators - getters and setters
+
+
+### keep models fat and controllers skinny
+
+blade 
+{!! !!} non escaped
+{{ }} escaped, might want to add @ simbol, to let java script to render it, if use angular for example
+
+use Carbon for dates
+
+use App/AppServiceProvider to share data with all views.
+View::share();
+View::composer();
+
+make your own provider
+php artisan make:provider ComposerServiceProvider
+
+Blade
+views/layouts - templates
+@extends('layouts.app')
+@yield('title')
+@section('title')
+	title
+@endsection
+
+@include('layouts.footer')
+
+Factory
+database/ModelFactory
+use to create fake users
+
+reset database 
+php artisan migrate:refresh
+
+and create fake users using model factory
+php artisan db:seed
+
+pagination
+User::paginate(10)
+or
+User::simplePaginate(10)
+
+Middleware - to change access policy
+php artisan make:middleware AuthenticatedMiddleware
+
+to register middleware go to 
+\App\Http\Kernel.php
+
+to use middleware
+in web.php/router
+Route::get('users', 'UserController@index')->middleware('authenticated');
