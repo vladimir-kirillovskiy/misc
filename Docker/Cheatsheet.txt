@@ -1,0 +1,43 @@
+// run sudo infront every docker comand. Or add a user into docker group(not sure that is a good idea)
+docker run hello-world 	// test run
+docker run -it ubuntu bash 	// run an Ubuntu container with interactive tty
+
+docker pull busybox		// fetches the busybox image from the Docker registry and saves it to local system
+docker images			// command to see a list of all local images
+
+docker run busybox		// run an empty container
+docker run busybox echo "hello from busybox"		// run container with echo command
+
+docker ps 				// shows you all containers that are currently running.
+docker ps -a 			// list of all containers that we ran
+
+docker run -it busybox sh 	// run command with the -it flags attaches us to an interactive tty in the container
+exit (from container) 		// exit container
+docker run --help			// list of supported flags
+
+docker rm				// remove container
+docker rm $(docker ps -a -q -f status=exited)		// delete all exited containers
+docker run --rm 		// will delete container upon exit. Good for one off docker runs
+docker rmi				// delete image you no longer need
+
+// -d detached flag, -P  will publish all exposed ports to random ports
+// --name corresponds to a name we want to give
+docker run -d -P --name static-site prakhar1989/static-site		
+docker port static-site		// show ports for the container
+docker run -p 8888:80 prakhar1989/static-site	// specify a custom port
+docker stop [containerID/Name]		// stop detached container
+
+// For simplicity, you can think of an image akin to a git repository 
+// images can be committed with changes and have multiple versions
+docker pull ubuntu:12.04 		// pull a specific version of ubuntu image
+// you can either get image from a registry (such as the Docker Hub) 
+// or create your own
+docker search [image]			// search image to pull
+
+// difference between base and child images.
+// Base images are images that have no parent image, usually images with an OS like ubuntu, busybox or debian.
+// Child images are images that build on base images and add additional functionality.
+
+// here are official and user images 
+// official - python, ubuntu, busybox and hello-world...
+// user - user/image-name
