@@ -1,3 +1,6 @@
+https://prakhar.me/docker-curriculum/
+https://github.com/prakhar1989/docker-curriculum/tree/master/flask-app
+
 // run sudo infront every docker comand. Or add a user into docker group(not sure that is a good idea)
 docker run hello-world 	// test run
 docker run -it ubuntu bash 	// run an Ubuntu container with interactive tty
@@ -41,3 +44,21 @@ docker search [image]			// search image to pull
 // here are official and user images 
 // official - python, ubuntu, busybox and hello-world...
 // user - user/image-name
+
+
+// create Dockerile in the project directory
+// # - comments
+// specify base image
+FROM python:3-onbuild
+// port number that needs to be exposed
+EXPOSE 5000
+// write the command for running the application
+CMD ["python", "./app.py"]
+
+docker build 		// create a Docker image from dockerfile
+docker build -t [user]/[name] . // -t flag for name. don't forget location of directory with dockerfile
+
+// run container
+docker run -p 8888:5000 [user]/[name]
+// The command we just ran used port 5000 for the server inside the container, and exposed this externally on port 8888. 
+localhost:8888 
