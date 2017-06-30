@@ -1,0 +1,107 @@
+// from codecademy
+
+var h1 = <h1>Hello world</h1>;		// valid react syntax - JSX compiler needed
+<p>Hello World</p>					// JSX as well
+
+// JSX elements are treated as JavaScript expressions. 
+
+var p1 = <p id="large">foo</p>;		// with id attribute
+
+// mested multiline expression
+// use parentheses
+var myDiv = (
+  <div>
+  	<h1>Hello World</h1>
+  </div>
+);
+
+//  a JSX expression must have exactly one outermost element.
+// right
+var paragraphs = (
+  <div id="i-am-the-outermost-element">
+    <p>I am a paragraph.</p>
+    <p>I, too, am a paragraph.</p>
+  </div>
+);
+
+// wrong
+var paragraphs = (
+  <p>I am a paragraph.</p> 
+  <p>I, too, am a paragraph.</p>
+);
+
+
+// render JSX
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+// first argument - JSX, DOM element
+ReactDOM.render(<h1>Hello World</h1>, document.getElementById('app'));
+
+// ReactDOM.render - it only updates DOM elements that have changed.
+
+// KEEP IN MIND
+
+// there is no class attribute but className instead.
+var myDiv = <div className="big">I AM A BIG DIV</div>
+
+// add slash to self-closing tags as img and input
+<img src="images/jenkins.png" />
+<br />
+
+// to add JS into JSX wrap it into curly braces
+<h1>{2 + 3}</h1>
+
+// there is also event listeners
+<img onClick={myFunc} />
+
+// CONDITIONALS 
+
+// conditionals can be injected into JSX, so start if statment and inject JSX into it
+// or use ternary operators
+
+var headline = (
+  <h1>
+    { age >= drinkingAge ? 'Buy Drink' : 'Do Teen Stuff' }
+  </h1>
+);
+
+// && operator
+{ i < 2  && <li> less than 2 </li> }
+
+// using maps for loops
+// and key JSX attribute
+var people = ['Rowe', 'Prevost', 'Gare'];
+
+var peopleLIs = people.map(function(person, i){
+  return <li key={'person_' + i}>{person}</li>
+});
+
+// avoiding JSX
+React.createElement("div", null, "i am div");
+// above same as 
+<div>i am div</div>
+
+
+// REACT APPLICATIONS
+
+// React applications are made out of components.
+// small, reusable chunk of code that is responsible for one job.
+// "React component," == "component instance"
+
+var React = require('react');           // load react library 
+var ReactDOM = require('react-dom');    // react library for interacting with the DOM
+
+// component class
+// Component class variable names must begin with capital letters!
+
+var MyComponentClass = React.createClass({
+  render: function () {             // mandatory property
+    return <h1>Hello world</h1>;
+  }
+});
+
+ReactDOM.render(
+  <MyComponentClass />,             // call companent class
+  document.getElementById('app')
+);
