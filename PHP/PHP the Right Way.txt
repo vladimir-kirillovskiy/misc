@@ -1,0 +1,70 @@
+// php build in server 5.4+
+php -S localhost:8000
+
+// Vargant
+// Puppet and Chef - software to set up base boxes
+// Rove - pregenerate Vargant builds
+// Puphpet - PHP heavy focused to set up virtual machines
+// Protobox - YAML document control for virtual machines
+
+// Code style guides 
+// PSR-0, PSR-1, PSR-2, PSR-4
+// PHP_CodeSniffer to check code against these rules
+// plugins for sublime and atom
+// Fabien Potencier's PHP Coding Standards Fixer
+
+// PHP evolution
+// 5.0 - object-oriented model
+// 5.3 - anonymous functions and namespaces
+// 5.4 - traits
+
+
+// Functional programing 
+// PHP Supports first-class functions
+// Support for closures since 5.3
+
+// CLI
+// $argc and $argv
+
+// XDebug
+// PHPUnit
+// FCacheGrind
+// Remote debuging available
+// Modify Apache VHost or .htaccess
+php_value xdebug.remote_host=192.168.?.?
+php_value xdebug.remote_port=9000
+
+
+// Dependancy Managment 
+// Composer - per project dependancy control
+// PEAR - global control
+
+// Building and Deploying Application
+// Task to automate:
+// Dependancy Managment
+// Compolation, minification assets
+// Running Tests
+// Creating Docs
+// Packaging
+// Deployment
+
+// Automation tools
+// Phing - easiest way to start for PHP
+// Apache Ant
+
+// Continous Integration
+// Travis CI
+// Jenkins 
+// PHPCI
+// Teamcity
+
+// Caching
+// Bytecode cache
+// OPcache - build in 
+// APC
+// XCache
+// Zend Optimizer+
+// WinCache
+
+// Object Caching
+// memcached
