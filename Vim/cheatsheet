@@ -1,0 +1,68 @@
+h - left
+j - down
+k - up
+l - right
+
+<esc> - normal mode
+:q! - exit, discard changes
+:wq! - exit, save changes 
+
+x - delete char
+
+i - insert text
+
+A - append, end of the line
+
+dw - delete word
+d$ - delete to the end of the line
+dd - delete line
+d2w - delete 2 words
+
+w - move one word
+2w - move 2 words
+
+e - move to end of the word
+3e - move to end of the 3rd word
+0 - move to start of the line
+
+u - undo last command 
+U - undo whole line 
+CTRL-R - undo the undo
+
+dd - delete line
+p - put line
+
+r - replace char
+
+ce - change word
+c$ - change to the end of the line
+
+CTRL-g - cursor location
+G - move to bottom of the file
+gg - beggining of the file
+
+500 G - move to line 500
+
+/ - search
+n - next phrase
+N - previous phrase
+? - search in backwards
+CTRL-o - go back 
+CTRL-i - go forward 
+	
+
+matching parantheses search
+
+place the cursor on any parenthes
+type %
+
+substitude command
+
+:s/old/new/g - replace old with new globaly
+:s/old/new/g - replace old with new just a first line
+
+:10,20s/old/new/g - fromline 10 to 20
+:%s/old/new/g -  To substitute all occurrences in the file type 
+:%s/old/new/gc - globaly with promt 
+
+e file - open file
