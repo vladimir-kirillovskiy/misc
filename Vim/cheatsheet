@@ -66,3 +66,5 @@ substitude command
 :%s/old/new/gc - globaly with promt 
 
 e file - open file
+
+K - open man page for selected words
