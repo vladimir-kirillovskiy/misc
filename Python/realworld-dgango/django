@@ -1,0 +1,101 @@
+#######  Set Up #############
+
+# make virtualenv
+virtualenv env
+
+# activate it 
+source ./env/bin/activate
+
+# to deactivate 
+deactivate
+
+# install django and mysqlclient
+pip install django mysqlclient
+
+# git clone  
+git clone ...
+
+# or
+
+# create a new project
+django-admin.py startproject myproject .
+
+# create requirements.txt
+pip freeze > requirements.txt
+cat requrements.txt
+
+# create DB
+CREATE DATABASE myproject CHARACTER SET UTF8;
+CREATE USER myprojectuser@localhost IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON myproject.* TO myprojectuser@localhost;
+FLUSH PRIVILEGES;
+exit
+
+# add db details to the settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+# migrate data structures 
+python manage.py makemigrations
+python manage.py migrate
+
+# create superuser
+python manage.py createsuperuser
+
+# run server
+python manage.py runserver 
+
+# test
+http://localhost:8000/
+
+# admin page 
+http://localhost:8000/admin
+
+##############################
+
+# Create first app
+django-admin startapp app
+
+# add app to the setting.py
+
+# add templates directory and add it to the settings.py
+
+# create app/urls.py
+# point main urls.py to the app/urls.py
+
+# work on app/views.py
+
+# start to work on templates
+
+# add models and migrate
+
+# add view permission 
+# in model add meta class
+
+class Meta:
+    default_permissions = ('add', 'change', 'delete', 'view')
+
+# template permissions
+{% if perms.jobs.delete_job %}
+	<p> can delete job </p>
+{% endif %}
+
+{{ user.groups.all.0 }}
+{% if user.groups.all.0.name == 'Employee' %}
+	<b>Employee</b>
+{% endif %}
+
+# view permissions
+if "Administrator" in request.user.groups.all().values_list('name', flat=True):
+
+# useful decorators 
+from contrib.auth.decorators import user_passes_test, login_required, permission_required
