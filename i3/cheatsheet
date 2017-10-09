@@ -1,0 +1,12 @@
+$mod = Alt or win
+
+install i3 dmenu feh conky
+
+dmenu $mod+d
+Terminal $mod+Enter
+Next Vertical $mod+v
+Next Horizontal $mod+h
+Full screen $mod+f
+Exit $mod+Shift+q
+Exit $mod+d xkill
+Exit Session $mod+Shift+e
