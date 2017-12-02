@@ -1,0 +1,17 @@
+java -jar gdx-setup.jar
+
+path to sdk 
+/home/vladk/Android/Sdk
+
+Press advanced and choose IDEA
+
+Generate and open project
+
+In android studion set up desktop enviroment
+Press dropdown -> edit configration
+Add new application and call it desktop
+Choose MainClass - DesktopLauncher
+Working directory - android/assets
+module - desktop
+
+apply and press run button

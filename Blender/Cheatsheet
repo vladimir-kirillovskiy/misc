@@ -22,3 +22,21 @@ p - separate
 shift+tab - snap mode
 
 o - edit selected
+
+
+## Making Character ##
+
+# Head
+w -> add Subdivisions
+Shift + R - repeat
+
+S, Y - scale on Y axis and X after
+
+e - extrude
+
+cntrl+J in obgect view merge objects
+
+select Vertexes and alt+m - can glue them together 
+
+b - visual select
+a - deselect

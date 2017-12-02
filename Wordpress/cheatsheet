@@ -1,0 +1,12 @@
+wget https://wordpress.org/latest.tar.gz
+tar -xzvf latest.tar.gz 
+
+
+CREATE DATABASE databasename;
+GRANT ALL PRIVILEGES ON databasename.* TO "wordpressusername"@"hostname" IDENTIFIED BY "password";
+FLUSH PRIVILEGES;
+
+
+chown http:http  -R * # Let Apache/nginx be owner
+find . -type d -exec chmod 755 {} \;  # Change directory permissions rwxr-xr-x
+find . -type f -exec chmod 644 {} \;  # Change file permissions rw-r--r--

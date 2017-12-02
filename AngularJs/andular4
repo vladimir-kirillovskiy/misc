@@ -1,0 +1,10 @@
+Use Angular cli:
+
+npm install -g @angular/cli
+
+// create an app
+ng new my-app
+
+// run server
+cd my-app
+ng serve
