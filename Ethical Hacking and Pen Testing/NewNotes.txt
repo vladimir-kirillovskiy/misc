@@ -1,0 +1,121 @@
+-- Curiosity is a KEY
+
+-- Introduce yourself in the Discussions
+--- chanse to meet new people and maybe build carrier together
+
+-- Prerequisits
+--- VM with kali linux
+--- Internet - public wifi is good enough
+--- Working wireless card
+
+-- Basic termonology
+
+White/Gray/Black hats
+Footprinting 		- researching, information gathering
+Dos (just you) 		- Denial of service (apache can handle about 10000 requests)
+DDos (Multiple people) 
+FUD (anti-virus can not detect)		- fully undetectable
+RAT					- remote administration tools
+Fishing 			- email with fake link or change DNS on router
+SQL Injections		- pass sql queries with http requests
+VPN					- virtual private networks, way to anonymise yourself
+Proxy				- less reliable way to stay anonymos
+Tor					- free open sorce, better than proxy, almost 100% anonymos, can access hidden/dark web
+VPS					- Virtual private servers
+Key Loggers			- Log key strokes and send to email address, some can extract existing information. Can do other stuff
+Terminal			- interface for operation system
+Firewall			- configured through ip table
+Root kit			- able to hide processes from system itself
+Reverse-shells		- program that opens  reverce connection
+
+
+-- Setting up network on VM
+--- Bridged adapter on VM settings
+--- if device not managed 
+cd /etc/NetworkManage/
+--- change managed variable in NetworkAdapter.conf to true
+service network-manager restart
+
+-- add repository in /etc/apt/sources.list
+--- uncoment line
+--- run apt-get dist-upgrad
+--- apt-get update && apt-get pgrade
+--- install all headers and dkms
+
+-- Tor
+--- To access darkweb and anonomize yourself
+--- Not installed by default
+--- apt-get install tor
+--- create a new user
+---- adduser user // dont use useradd
+--- Install tor browser from off site
+--- launch it 
+--- hiddenwiki - need to google for url. List of hidden .onion urls
+--- Anonymity & Security section is useful for pentesting and ethical hacking
+--- Forums and chats are useful but tend to be down
+--- don't download and don't run anything, deffinetly not on the host machine
+--- don't go against law
+
+-- Proxy Chains
+--- to use with combination with tor
+--- anonomize footprinting, nmaping, etc 
+--- conf file: 
+vim /etc/proxychains.conf
+--- a lot of free, reasonable fast and stable. but not enought for bruteforcing or anything like this.
+--- best proxy protocol is SOCKS5 - make sure to always use them!
+--- most used option is dynamic_chain, probably the best
+--- must use dynamic_chain with Tor
+--- make sure that proxy_dns is enabled, otherwise you are not anonymus
+--- Check that tor is running 
+service tor status
+--- start if required
+service tor start
+--- verify settings to make sure all wrking and you are anonymous
+proxychains firefox www.duckduckgo.com
+--- duckduckgo.com doesn't save ips and anonymize you
+--- search for "check for dns leaks" to test
+--- can run any application through proxichains
+proxychains nmap
+
+-- Import custom chains for proxies
+--- google for "free socks5 proxies"
+--- try to stick with countries who doesn't share info
+--- China, Russia, Neatherlands, Germany, sweden
+--- not as much matter for legal white hack work
+--- add them into /etc/proxychains.conf
+
+--VPN
+--- Check settings for VM
+--- Devices - Network Settings, might need to be Bridged Adapter, I have NAT seems to be working
+---- Promiscuous Mode - Allow All
+--- Change DNS servers
+cat /etc/resolve.conf
+vim /etc/dhcp/dhcpclient.conf
+--- google for openDNS ip addresses 
+--- add them into prepend line 
+--- only 3 can be used 1 main and 2 failsafe
+--- restart network manager
+system network-manager restart
+cat /etc/resolve.conf
+--- Check reputation of the DNS servers on forums
+--- good to use countries who respect user privacy
+
+-- disable webrtc
+about:config - in firefox
+--- search
+media.peerconnection.enabled
+--- set to false
+--- google for "open von free"
+--- for example vpnbook
+--- download openvpn and save login\password
+--- unzip it
+run in terminal 
+openvpn vpnbook-.....ovpn
+--- enter login and password
+--- let it run for a minute till Initialization Sequence Completed
+
+-- Not that we are trying to hide our real ISP dns server
+--- check with dns leaks !!!
+--- better to have diffirent country
+
+-- Change MAC
