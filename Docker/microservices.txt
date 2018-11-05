@@ -1,0 +1,8 @@
+Try Simple:
+
+frontend on angular
+Backend on PHP
+Another Feature can be with Python
+MySql DB
+
+4 containers

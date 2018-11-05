@@ -1,0 +1,41 @@
+// add component - physics - rigidbody
+Rigidbody - affected by physics forces
+
+// project window
+prefab is a template GameObject we can make copies of
+
+// get inputs 
+if (Input.GetKeyDown(KeyCode.UpArrow)) {}
+
+
+Core Game Design
+Player Experience 
+Core Mechanic 
+Theme
+Core game loop 
+
+Story hooks
+Who is a player?
+What is the setting?
+What is the threat?
+What is the goal?
+
+
+[SerializeField] - added infront of variable declaration is allows us to see it in inspector
+[ TextArea(14, 10) ] [SerializeField]
+ 
+states and state machines 
+State is an action or Process or Behavior
+State Machine assume only 1 state at a time
+Conditions (requirments)  to transitions from one state to another
+
+
+Start -> Room one -> <Which way> -> 2 states as reult - blue or red door
+
+
+Scriptable Objects is a class that lets us store data in stand alone assets
+Can be used as template for consistancy and keep lots of data out of script
+[CreateAssetMenu(menuName = "States")] above class
+
+
+Text101 is a good platform for visual novels

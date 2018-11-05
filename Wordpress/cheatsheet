@@ -10,3 +10,21 @@ FLUSH PRIVILEGES;
 chown http:http  -R * # Let Apache/nginx be owner
 find . -type d -exec chmod 755 {} \;  # Change directory permissions rwxr-xr-x
 find . -type f -exec chmod 644 {} \;  # Change file permissions rw-r--r--
+
+
+underscores.me for template theme
+
+<?php bloginfo("name"); ?>
+<?php bloginfo("description"); ?>
+<?php bloginfo("stylesheet_directory"); ?>
+<?php bloginfo("template_directory"); ?>
+
+Custom fields - Pages -> screen options -> Custom fields
+
+$main_form_text = get_post_meta(8, 'main_form_text');   // postid, custom field name
+
+Advanced Custom Fields - WP Plugin
+
+$about_image = get_field('about_image');
+
+Custom post types UI Plugin

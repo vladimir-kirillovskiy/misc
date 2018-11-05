@@ -1,0 +1,3 @@
+Update() is called before rendering the frame
+FixedUpdate() is called before physics calculations
+

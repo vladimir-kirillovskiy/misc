@@ -1,0 +1,69 @@
+// Docker
+
+// uses containers, uses os from PC
+
+// install Docker
+$ curl -fsSL get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+
+// uninstall Docker
+$ sudo apt-get purge docker-ce
+$ sudo rm -rf /var/lib/docker
+
+// Manage Docker as a non-root user
+
+// add user to docker group
+// didn't work for me
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+
+// Configure Docker to start on boot
+$ sudo systemctl enable docker
+// disable 
+$ sudo systemctl disable docker
+
+// Existing containers
+// Need to have a login 
+https://hub.docker.com/
+
+// to login 
+docker login
+
+// create Dockerfile
+// use existing container
+FROM php:7.2-apache
+// Copy local folder to container
+COPY src/ var/www/html
+// listen for port 80
+EXPOSE 80
+
+
+// build container
+docker build -t container-name .
+
+// run docker with forwarding port 80 from host to container
+docker run -p 80:80 container-name
+
+// open localhost in web browser
+// for some reason /var/www/html/var/www/html created
+// using volumes will fix it
+
+
+// Volumes
+// they are needed to avoid rebuilding cointeiner for every change
+
+// two type of volumes
+// one to share data between containers 
+// another lets you to share data between host and container
+
+// -v require full path to directory
+docker run -p 80:80 -v /User/name/Projects/Docker/src/:/var/www/html container-name
+
+// Life of the container tied directly to single process
+// that is why there should be only one process/service per container
+
+// Good for microservices as we can break application on component 
+// each component in separate container and can use different languages
+
+// Docker compose  video 
+https://www.youtube.com/watch?v=Qw9zlE3t8Ko

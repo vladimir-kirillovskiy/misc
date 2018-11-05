@@ -1,0 +1,41 @@
+Clickjacking
+- Framekiller Js - IE has issues with it
+- Content Security Policy headers
+- X-Frame-Options headers (DENY or SAMEORIGIN) - to restrict origins - gold standard
+
+File inclusion
+?page=test
+No such file or directory - that means include uses "test" + .php
+can it include local and remote files?
+?page=http://website.com/test - execute code from test.php
+Authorization can be bypassed
+?page=admin or ?page=admin_users
+Don't let user input into include()
+Hardcode page names
+
+Null termination bug
+not often works
+Null characters - \x00, %00, etc, is used to terminate strings
+include($_GET['page'] . '.php');
+?page=/etc/passwd%00   - will ignore.php
+Test is every time file handling is present especialy with php, but python, ruby and others are also vunerable
+Most browsers will strip %00 from request or truncare them there
+Burp will allow to embed literl nulls as well as URLencoded(%00) nulls
+
+Password storage
+Say no to MD5
+Use PBKDF1 and 2 ?
+Salting - against rainbow tables
+Use BCrypt or SCrypt - solves all the above
+Use SHA256 in PBKDF2 using per-user salt values (randomly generated when password changes), with at least 10000 rounds
+Can always bump rounds up later
+
+Session Fixation
+usually legacy php
+2 problems:
+- session ID in query string is easily to leak to other user 
+- Session ID is the sole mechanism to tie user to browser
+New session id for every login, wipe out old session id for every logout
+
+Unchecked redirects
+Redirect from server side
