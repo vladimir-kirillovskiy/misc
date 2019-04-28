@@ -1,0 +1,131 @@
+Advanced SQL for Data Science
+
+Data manipulation commands and data definition commands
+
+
+Create index:
+
+CREATE INDEX idx_staff_last_name
+ON staff
+USING (last_name)
+
+
+Views:
+
+CREATE OR REPLACE VIEW ...
+
+CREATE VIEW staff_div AS
+SELECT 
+	s.id,
+	s.last_name,
+	cd.company_division
+FROM
+	staff s
+LEFT JOIN
+	company_division cd
+ON
+	s.department = cd.department
+	
+
+Schemas
+
+CREATE SCHEMA ...
+
+
+functions:
+count()
+min()
+max()
+sum()
+round()
+avg()
+var_pop() - variance
+stddev_pop() - standart deviation
+
+
+upper()
+lower()
+
+concatianate 2 columns:
+SELECT 
+	job_title || '-' || department
+FROM
+	staff
+	
+trim()
+length()
+substring('string' from 1 for 3)
+overlay('string' placing 'asst' from 1 for 10)
+
+reg expresions
+
+where
+	job_title similar to '%Assistant%(III|IV)'   - all assistants III and IV
+	job_title similar to '%Assistant I_'		- all assistants starting with I
+	
+trunc()
+ceil()
+
+Subqueries can be in SELECT, FROM and WHERE clauses
+
+grouping sets?
+
+	
+ROLLUP()  - in the group clause add total to the grouping 
+CUBE() - in the group clause
+
+FETCH FIRST - works with order by and sort row before selecting rows to return(so it orders and then selects), 
+LIMIT works my limiting rows and then performing the operations(it limits and then order and selects)
+
+Window functions
+SELECT 
+	avg(salary) OVER (PARTITION BY department)
+	max(salary) OVER (PARTITION BY department)
+FROM 
+	staff
+	
+	
+FIRST VALUE - return first value can use ORDER BY, otherwise it is same as MAX()
+SELECT 
+	first_value(salary) OVER (PARTITION BY department ORDER BY salary DESC)
+FROM 
+	staff
+	
+	
+RANK() - return rank by department
+SELECT
+	rank() OVER (PARTITION BY department ORDE BY salary DESC)
+FROM 
+	staff
+	
+LAG and LEAD - Lag returns a row before current proccessed row
+lag(salary) OVER (PARTITION BY department ORDER BY salary DESC)
+
+NTITLE - assign buckets to data, in example we break down salaries into 4 groups, equal number of buckets
+SELECT
+	ntitle(4) OVER (PARTITION BY department ORDER BY salary DESC)
+FROM
+	staff
+	
+	
+Tip 1:
+Don't understimate time needed to prepare data
+
+Tip 2:
+Use Aggregate and Statistics functions to understand your data
+
+Tip 3:
+Reformat and check data quality before attempting joins (diffirent sources) 
+
+Tip 4:
+User outter joins to include as much data as possible
+
+Tip 5:
+Use VIEWS to store complex SQL logic
+
+Tip 6:
+Use CUBEs and ROLLUPs for multiple aggregation
+
+Tip 7:
+Use Window functions to work with groups of data
+	
