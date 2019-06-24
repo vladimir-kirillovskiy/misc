@@ -1,0 +1,13 @@
+Collaborative Filtering Systems
+
+- User based
+-- Classification-based
+-- Model-based
+- Item based
+
+
+
+Content-Based Recommenders
+Popularity-Based Recomenders
+
+	
