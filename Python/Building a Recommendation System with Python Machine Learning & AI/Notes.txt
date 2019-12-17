@@ -10,4 +10,7 @@ Collaborative Filtering Systems
 Content-Based Recommenders
 Popularity-Based Recomenders
 
-	
+Evaluating recommendation systems
+- Precision
+- Recall
+
